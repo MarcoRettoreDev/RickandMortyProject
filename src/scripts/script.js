@@ -1,7 +1,10 @@
 import { fetchData } from '../utils/fetchData.mjs';
 const API = 'https://rickandmortyapi.com/api/character/';
 
-const title = document.getElementsByClassName('card-title');
+const titleField = document.getElementsByClassName('card-title');
+const statusField = document.getElementsByClassName('card-status');
+const dimensionField = document.getElementsByClassName('card-dimension');
+const imgURL = document.getElementsByClassName('img-container');
 
 const myFunction = async (url_api) =>
 {
@@ -13,7 +16,10 @@ const myFunction = async (url_api) =>
     const { name } = data1.results[0]; // Nombre
     const { image } = data1.results[0]; // URL IMG
     const { dimension } = data2; // Nombre dimensión
-    title[0].innerHTML = name;
+
+    titleField[0].innerHTML = name;
+    dimensionField[0].innerHTML = dimension;
+    imgURL[0].firstElementChild.setAttribute('src', image);
   }
   catch(error)
   {
