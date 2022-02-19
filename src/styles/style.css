@@ -26,31 +26,50 @@ body
 
 .main
 {
-  width: 100%;
-  display:grid;
-  grid-template-columns: 1fr;
+  width: 100%; 
 }
 
 .cards-container
 {
-  overflow-y: scroll;
-}
-
-.card-wrapper
-{
-  padding: 8px;
   display:grid;
   place-content: center;
+  grid-template-columns: 1fr;
+  overflow: auto;
+}
+
+.card
+{
+  background-color: #fff;
+  margin-top: 32px;
+  border-radius: 5%;
 }
 
 .img-container img
 {
-  border-radius: 5%;
+  width: 100%;
+  border-radius: 5% 5% 0 0;
 }
 
-.card-text div:first-child
+.card-text
+{
+  text-align: center;
+}
+
+.card-text h3 
+{
+  font-family: 'Finger Paint', cursive;
+  font-size: 22px;
+}
+
+.text-wrapper
 {
   display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 12px;
+
+
+  font-size: 18px;
+  font-family: 'Roboto Mono', monospace;
 }
-
-

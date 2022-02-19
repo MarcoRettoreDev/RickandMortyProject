@@ -3,10 +3,17 @@ import { cardMaker } from '../utils/cardMaker.mjs';
 const API = 'https://rickandmortyapi.com/api/character/';
 
 const cardswrapper = document.getElementById('cards-wrapper');
-const selectList = document.getElementById('select-list');
+const defaultPages = 5; // Páginas por default
 
-var maxPages = selectList.value;
 
+const select = document.getElementById('select-list');
+
+const updateList = () =>
+{
+  var maxPages = select.options[select.selectedIndex].value;
+  pagesNumber(maxPages);
+}
+select.addEventListener('change', updateList)
 
 
 const getData = async () =>
@@ -19,6 +26,7 @@ const getData = async () =>
         const card = cardMaker(character);
         cardswrapper.appendChild(card);
       })
+    console.log(results);
   }
   catch(error)
   {
@@ -34,12 +42,5 @@ const pagesNumber = (maxPages) =>
   }
 };
 
-pagesNumber(maxPages);
+pagesNumber(defaultPages);
 
-const random = () =>
-{
-  console.log(maxPages);
-}
-
-var button = document.getElementById('button-showme');
-button.addEventListener('click', random);
