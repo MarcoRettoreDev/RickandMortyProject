@@ -5,24 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/src/styles/style.css">
-  <title>Rick and Morty Project | Mr Dev</title>
+  <link rel="icon" href="./src/images/rickndMorty-icon.png">
+  <title>Rick and Morty | Mr Dev</title>
 </head>
 <body>
-  <section class="section-wrapper">
-    <h1 class="title">Title</h1>
-    <div class="cards-wrapper">
-      <div class="card">
-        <div class="img-container">
-          <img src="#" alt="">
-        </div>
-        <div class="card-text">
-          <h3 class="card-title" id="class-title"></h3>
-          <p class="card-status"></p>
-          <p class="card-dimension"></p>
-        </div>
-      </div>
+  <header>
+    <div class="img-header-wrapper">
+      <img src="/src/images/rickandmorty-title.png" alt="">
     </div>
-  </section>
+  </header>
+  <main class="main">
+    <h1 class="title">Printing API with promises</h1>
+    <div class="button-wrapper">
+      <select class="select-list" id="select-list">
+        <option value=1>1</option>
+        <option value=10>10</option>
+        <option value=20>20</option>
+        <option value=42>All</option>
+      </select>
+      <input type="button" value="Show Me" id="button-showme">
+    </div>
+    <section id="cards-wrapper" class="cards-container">
+    </section>
+  </main>
+  <footer>
+    <p>Made with ♥ for <a target="_blank" href="https://marcorettoredev.github.io/">Mr. Dev</a></p>
+  </footer>
   <script src="./src/scripts/script.js" type="module"></script>
 </body>
 </html>

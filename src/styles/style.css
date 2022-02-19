@@ -8,16 +8,49 @@
 
 html
 {
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
 }
 
 body
 {
-  min-height: 100%;
-  background-image: url("../images/background.jpg");
-  background-color: #fff;
-  background-position: center;
+  height: 100%;
+  background: grey;
+  width: 90%;
+  margin: 0 auto;
+  /* Atributos por si usamos imágenes */
+  /* background-position: center;
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:cover; */
+};
+
+.main
+{
+  width: 100%;
+  display:grid;
+  grid-template-columns: 1fr;
 }
+
+.cards-container
+{
+  overflow-y: scroll;
+}
+
+.card-wrapper
+{
+  padding: 8px;
+  display:grid;
+  place-content: center;
+}
+
+.img-container img
+{
+  border-radius: 5%;
+}
+
+.card-text div:first-child
+{
+  display:flex;
+}
+
 

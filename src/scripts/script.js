@@ -1,25 +1,24 @@
 import { fetchData } from '../utils/fetchData.mjs';
+import { cardMaker } from '../utils/cardMaker.mjs';
 const API = 'https://rickandmortyapi.com/api/character/';
 
-const titleField = document.getElementsByClassName('card-title');
-const statusField = document.getElementsByClassName('card-status');
-const dimensionField = document.getElementsByClassName('card-dimension');
-const imgURL = document.getElementsByClassName('img-container');
+const cardswrapper = document.getElementById('cards-wrapper');
+const selectList = document.getElementById('select-list');
 
-const myFunction = async (url_api) =>
+var maxPages = selectList.value;
+
+
+
+const getData = async () =>
 {
   try
   {
-    const data1 = await fetchData(url_api);
-    const data2 = await fetchData(data1.results[0].origin.url);
-    const { count } = data1.info; // Cant de personajes
-    const { name } = data1.results[0]; // Nombre
-    const { image } = data1.results[0]; // URL IMG
-    const { dimension } = data2; // Nombre dimensión
-
-    titleField[0].innerHTML = name;
-    dimensionField[0].innerHTML = dimension;
-    imgURL[0].firstElementChild.setAttribute('src', image);
+    const { results } = await fetchData(API);
+    results.map (character =>
+      {
+        const card = cardMaker(character);
+        cardswrapper.appendChild(card);
+      })
   }
   catch(error)
   {
@@ -27,4 +26,20 @@ const myFunction = async (url_api) =>
   }
 }
 
-myFunction(API);
+const pagesNumber = (maxPages) =>
+{
+  for(let i = 0 ; i<= maxPages ; i++)
+  {
+    getData(i);
+  }
+};
+
+pagesNumber(maxPages);
+
+const random = () =>
+{
+  console.log(maxPages);
+}
+
+var button = document.getElementById('button-showme');
+button.addEventListener('click', random);
