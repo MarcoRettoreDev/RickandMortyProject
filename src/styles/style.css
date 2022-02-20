@@ -6,6 +6,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root
+{
+  --body-font-size: ;
+  --title-font-size: ;
+
+  /* Colores */
+  --red: rgb(224, 21, 21);
+  --green: rgb(10, 175, 38);
+  --green-soft: rgb(10, 134, 83);
+  --cyan: rgb(22, 191, 197);
+  --white: #fff;
+  --grey: rgb(207, 206, 206);
+  --black: #000;
+}
 
 html
 {
@@ -17,7 +31,7 @@ body
 {
   height: 100%;
   width: 100%;
-  background: #000;
+  background: var(--black);
   /* Atributos por si usamos imágenes */
   /* background-position: center;
   background-repeat: no-repeat;
@@ -27,6 +41,9 @@ body
 .header
 {
   width: 90%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-header-wrapper
@@ -39,10 +56,37 @@ body
   background-position: center;
 }
 
+
+@media screen and (min-width: 820px)
+{
+  .img-header-wrapper
+  {
+    height: 200px;
+    background-image: url('/src/images/rickandmorty-title-medium.png');
+  }
+}
+
+@media screen and (min-width: 1200px)
+{
+  .img-header-wrapper
+  {
+    height: 265px;
+    background-image: url('/src/images/rickandmorty-title.png');
+  }
+}
+
 .main
 {
   width: 90%;
-  margin: 0 auto;
+  margin: 24px auto;
+}
+
+@media screen and (min-width: 1200px)
+{
+  .main
+  {
+    margin: 36px auto;
+  }
 }
 
 /* BUTTONS */
@@ -51,34 +95,94 @@ body
   display:flex;
   flex-direction: column;
   align-items: center;
-  margin-top: px;
-
 }
+
+.select-list
+{
+  width: 60px;
+  text-align: center;
+  font-size: var(--body-font-size);
+  font-weight: bold;
+  background-color: var(--black);
+  color:var(--cyan);
+  border-color: var(--cyan);
+  box-shadow: 3px 3px 20px var(--green),
+              -3px -3px 20px var(--green)
+}
+
 .button-wrapper
 {
   display:flex;
+  width: 100%;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  position: relative;
 }
 
-#button-prev,
+@media screen and (min-width: 820px)
+{
+  .button-wrapper
+  {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
+
+#button-next,
+#button-prev
+{
+  width: 64px;
+}
+
+#button-next:active,
+#button-prev:active
+{
+  transform: scaleY(-10%), scaleX(-10%);
+}
+
+@media screen and (min-width: 820px)
+{
+  #button-next,
+  #button-prev
+{
+  width: 84px;
+}
+
+}
+
 #button-next
 {
-  padding: 4px 8px;
-  margin: 20px;
-  border-radius: 10%;
-  width: 120px;
-  height: 40px;
+  transform:rotate(180deg);
 }
 
 .cards-container
 {
   display:grid;
   place-items: center;
-  grid-template-columns: 1fr; /* Modificar para tablet / desktop */
+  grid-template-columns: 1fr;
   row-gap: 32px;
+  margin-top: 32px;
+}
+
+@media screen and (min-width: 820px)
+{
+  .cards-container
+  {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 46px;
+  }
+}
+
+@media screen and (min-width: 1200px)
+{
+  .cards-container
+  {
+    width: 80%;
+    margin: 32px auto;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 32px;
+  }
 }
 
 .card-wrapper
@@ -89,50 +193,89 @@ body
 
 .card
 {
-  background-color: rgb(143, 143, 143);
-  border-radius: 5% 5% 0 0;
-  max-width: 316px;
+  display:flex;
+  flex-direction: column;
+  justify-content: stretch;
+  background-color: var(--green-soft);
+  border-radius: 5%;
+  width: 316px;
+  min-height: 424px;
+  box-shadow: 0 19px 38px rgba(22, 196, 200, 0.3),
+               0 15px 12px rgba(0, 197, 200, 0.20);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+
+.card:hover
+{
+  box-shadow: 0 14px 28px rgba(22, 196, 200, 0.6), 
+              0 10px 10px rgba(0, 197, 200, 0.40);
+}
+
+.card-text
+{
+  height: 100%;
+}
+
 .card-title
 {
-  text-align:center;
   font-family: 'Finger Paint', cursive;
+}
+
+.text-header
+{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 12px;
 }
 
 .text-wrapper
 {
   display:flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin: 8px 12px;
-  font-family: 'Roboto Mono';
+  font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+}
+
+.text-title
+{
+  font-weight: bold;
+}
+
+.card-dimension
+{
+  text-align: right;
 }
 
 /* Status */
+.status
+{
+  cursor: pointer;
+  border-radius: 10%;
+  padding: 4px 8px;
+  background-color: var(--black);
+  font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
 .alive
 {
-  background-color: #000;
-  border: 1px solid green;
-  border-radius: 5%;
-  padding: 4px 8px;
-  color: green;
+  border: 1px solid var(--green);
+  color: var(--green);
 }
 
 .dead
 {
-  background-color: #000;
-  border: 1px solid red;
-  border-radius: 5%;
-  padding: 4px 8px;
-  color: red;
+  border: 1px solid var(--red);
+  color: var(--red);
 }
 
 .unknown
 {
-  border: 1px solid grey;
-  border-radius: 5%;
-  padding: 4px 8px;
-  color: white;
+  border: 1px solid var(--black);
+  color: var(--white);
 }
 
 .img-container
@@ -143,6 +286,7 @@ body
 .img-container img
 {
   width: 100%;
+  max-height: 300px;
   border-radius: 5% 5% 0 0;
 }
 
@@ -151,8 +295,23 @@ body
   display:flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
+  height: 62px;
+
+  font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
+  color:white;
 }
 
+.footer a,
+.footer a:visited
+{
+  color:white;
+  cursor:pointer;
+}
+
+.github-icon
+{
+  width: 28px;
+  margin-left: 12px;
+}
 
 

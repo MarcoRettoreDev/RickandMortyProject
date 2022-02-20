@@ -7,53 +7,24 @@ var page = 1;  // default Page
 
 const select = document.getElementById('select-list');
 
-const updateList = () =>
-{
-  var maxPages = select.options[select.selectedIndex].value;
-  pagesNumber(maxPages);
-}
-select.addEventListener('change', updateList)
-
-
-
-
 //Functions
 
 const getData = async (page) =>
 {
-  try
+  try 
   {
     const data = await fetchData(`${API}?page=${page}`); // all data
-    const { info } = await fetchData(`${API}?page=${page}`); // verify next and prev
 
     while (cardswrapper.firstChild) // here we clean all nodes
     { 
       cardswrapper.removeChild(cardswrapper.lastChild);
-    }
-
+    } 
+    
     data.results.map (character =>
     {
       const card = cardMaker(character); // llamamos a nuestra func
       cardswrapper.appendChild(card); // pegamos las cards
     })
-    
-    if(info.next === null) // button next check
-    {
-      buttonNext.style.display = "none";
-    }
-    else
-    {
-      buttonNext.style.display = "inline-block";
-    }
-
-    if(info.prev === null) //button prev check
-    {
-      buttonPrev.style.display = "none";
-    }
-    else
-    {
-      buttonPrev.style.display = "inline-block";
-    }
   }
   catch(error)
   {
@@ -67,9 +38,8 @@ const nextPage = () =>
   {
     page += 1;
     getData(page);
-    console.log(page);
   }
-}
+} 
 
 const prevPage = () =>
 {
@@ -77,26 +47,30 @@ const prevPage = () =>
   {
     page -= 1;
     getData(page);
-    console.log(page);
   }
 }
 
 const listPage = () =>
 {
   const listValue = Number(list.options[list.selectedIndex].value);
-  getData(listValue);
-  console.log('List Value tiene bug');
+  page = listValue;
+  getData(page);
 }
+
+
+
+
+
+
 // Buttons
 
 const buttonNext = document.getElementById('button-next');
 buttonNext.addEventListener('click', nextPage);
 
-
 const buttonPrev = document.getElementById('button-prev');
 buttonPrev.addEventListener('click', prevPage);
 
 const list = document.getElementById('select-list');
-list.addEventListener('change', listPage);
+list.addEventListener('change', listPage); // Selector page
 
 getData(page); // print all data
