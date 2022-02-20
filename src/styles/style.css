@@ -17,7 +17,7 @@ body
 {
   height: 100%;
   width: 100%;
-  background: grey;
+  background: #000;
   /* Atributos por si usamos imágenes */
   /* background-position: center;
   background-repeat: no-repeat;
@@ -41,71 +41,108 @@ body
 
 .main
 {
-<<<<<<< HEAD
-  width: 100%; 
-=======
   width: 90%;
-  margin: 0 auto; 
->>>>>>> d3320cb9366b7b74db26a32f29aecb95cc533828
+  margin: 0 auto;
+}
+
+/* BUTTONS */
+.button-section
+{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: px;
+
+}
+.button-wrapper
+{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#button-prev,
+#button-next
+{
+  padding: 4px 8px;
+  margin: 20px;
+  border-radius: 10%;
+  width: 120px;
+  height: 40px;
 }
 
 .cards-container
 {
   display:grid;
-<<<<<<< HEAD
-  place-content: center;
-  grid-template-columns: 1fr;
-  overflow: auto;
-}
-
-.card
-{
-  background-color: #fff;
-  margin-top: 32px;
-  border-radius: 5%;
-=======
   place-items: center;
   grid-template-columns: 1fr; /* Modificar para tablet / desktop */
+  row-gap: 32px;
 }
 
 .card-wrapper
 {
   max-width: 316px;
   padding: 8px;
->>>>>>> d3320cb9366b7b74db26a32f29aecb95cc533828
 }
 
-.img-container img
+.card
 {
-<<<<<<< HEAD
-  width: 100%;
+  background-color: rgb(143, 143, 143);
   border-radius: 5% 5% 0 0;
+  max-width: 316px;
 }
-
-.card-text
+.card-title
 {
-  text-align: center;
-}
-
-.card-text h3 
-{
+  text-align:center;
   font-family: 'Finger Paint', cursive;
-  font-size: 22px;
 }
 
 .text-wrapper
 {
   display:flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 12px;
-
-
-  font-size: 18px;
-  font-family: 'Roboto Mono', monospace;
+  margin: 8px 12px;
+  font-family: 'Roboto Mono';
 }
-=======
+
+/* Status */
+.alive
+{
+  background-color: #000;
+  border: 1px solid green;
+  border-radius: 5%;
+  padding: 4px 8px;
+  color: green;
+}
+
+.dead
+{
+  background-color: #000;
+  border: 1px solid red;
+  border-radius: 5%;
+  padding: 4px 8px;
+  color: red;
+}
+
+.unknown
+{
+  border: 1px solid grey;
+  border-radius: 5%;
+  padding: 4px 8px;
+  color: white;
+}
+
+.img-container
+{
+  width: 100%;
+}
+
+.img-container img
+{
+  width: 100%;
   border-radius: 5% 5% 0 0;
 }
 
@@ -119,4 +156,3 @@ body
 
 
 
->>>>>>> d3320cb9366b7b74db26a32f29aecb95cc533828
