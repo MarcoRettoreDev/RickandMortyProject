@@ -4,34 +4,55 @@
 {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html
 {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
 }
 
 body
 {
   height: 100%;
+  width: 100%;
   background: grey;
-  width: 90%;
-  margin: 0 auto;
   /* Atributos por si usamos imágenes */
   /* background-position: center;
   background-repeat: no-repeat;
   background-size:cover; */
-};
+}
+
+.header
+{
+  width: 90%;
+}
+
+.img-header-wrapper
+{
+  display:block;
+  height: 115px;
+  width: 100%;
+  background-image: url('/src/images/rickandmorty-title-tiny.png'); /* Modificar para tablet / desktop */
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .main
 {
+<<<<<<< HEAD
   width: 100%; 
+=======
+  width: 90%;
+  margin: 0 auto; 
+>>>>>>> d3320cb9366b7b74db26a32f29aecb95cc533828
 }
 
 .cards-container
 {
   display:grid;
+<<<<<<< HEAD
   place-content: center;
   grid-template-columns: 1fr;
   overflow: auto;
@@ -42,10 +63,21 @@ body
   background-color: #fff;
   margin-top: 32px;
   border-radius: 5%;
+=======
+  place-items: center;
+  grid-template-columns: 1fr; /* Modificar para tablet / desktop */
+}
+
+.card-wrapper
+{
+  max-width: 316px;
+  padding: 8px;
+>>>>>>> d3320cb9366b7b74db26a32f29aecb95cc533828
 }
 
 .img-container img
 {
+<<<<<<< HEAD
   width: 100%;
   border-radius: 5% 5% 0 0;
 }
@@ -73,3 +105,18 @@ body
   font-size: 18px;
   font-family: 'Roboto Mono', monospace;
 }
+=======
+  border-radius: 5% 5% 0 0;
+}
+
+.footer
+{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+
+
+>>>>>>> d3320cb9366b7b74db26a32f29aecb95cc533828
