@@ -57,11 +57,6 @@ const listPage = () =>
   getData(page);
 }
 
-
-
-
-
-
 // Buttons
 
 const buttonNext = document.getElementById('button-next');
