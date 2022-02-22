@@ -51,7 +51,7 @@ body
   display:block;
   height: 115px;
   width: 100%;
-  background-image: url('/src/images/rickandmorty-title-tiny.png'); /* Modificar para tablet / desktop */
+  background-image: url('../images/rickandmorty-title-tiny.png'); /* Modificar para tablet / desktop */
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -62,7 +62,7 @@ body
   .img-header-wrapper
   {
     height: 200px;
-    background-image: url('/src/images/rickandmorty-title-medium.png');
+    background-image: url('../images/rickandmorty-title-medium.png');
   }
 }
 
@@ -71,7 +71,7 @@ body
   .img-header-wrapper
   {
     height: 265px;
-    background-image: url('/src/images/rickandmorty-title.png');
+    background-image: url('../images/rickandmorty-title.png');
   }
 }
 
@@ -180,7 +180,7 @@ body
   {
     width: 80%;
     margin: 32px auto;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 32px;
   }
 }
