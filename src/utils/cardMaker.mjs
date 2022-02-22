@@ -1,6 +1,5 @@
 const cardMaker = object =>
 {
-  // console.log(object);
   const card = document.createElement('article');
   card.classList.add('card');
   card.innerHTML =
