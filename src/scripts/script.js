@@ -1,11 +1,11 @@
 import { fetchData } from '../utils/fetchData.mjs';
 import { cardMaker } from '../utils/cardMaker.mjs';
+
 const API = 'https://rickandmortyapi.com/api/character/';
 
 const cardswrapper = document.getElementById('cards-wrapper'); // node to append the childs
-var page = 1;  // default Page
 
-const select = document.getElementById('select-list');
+var page = 1;  // default Page
 
 //Functions
 
@@ -56,11 +56,6 @@ const listPage = () =>
   page = listValue;
   getData(page);
 }
-
-
-
-
-
 
 // Buttons
 
