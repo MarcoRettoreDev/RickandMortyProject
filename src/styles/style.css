@@ -167,8 +167,8 @@ body
 {
   .cards-container
   {
-    grid-template-columns: repeat(4, 1fr);
-    width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
     margin: 32px auto;
   }
 }
@@ -191,11 +191,9 @@ body
 {
   .card
   {
-    max-width: 400px;
-    min-height: 550px;
+    min-height: 520px;
   }
 }
-
 
 .card:hover
 {
@@ -231,7 +229,7 @@ body
 {
   .text-header
   {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 }
 
@@ -249,7 +247,7 @@ body
 {
   .text-wrapper
   {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
 
