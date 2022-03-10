@@ -43,10 +43,14 @@ const nextPage = () =>
 
 const prevPage = () =>
 {
-  if(page > 1)
+  if(page !< 1)
+  {
+    null;
+  }
+  else
   {
     page -= 1;
-    getData(page);
+    getData(page)
   }
 }
 
