@@ -37,20 +37,25 @@ const nextPage = () =>
   if(page > 0 && page < 42)
   {
     page += 1;
+    console.log(page);
     getData(page);
   }
 } 
 
 const prevPage = () =>
 {
-  if(page !< 1)
+  if(page > 1)
   {
-    null;
+    page -= 1;
+    console.log(page);
+    getData(page)
   }
   else
   {
-    page -= 1;
+    page = 1;
     getData(page)
+    console.log(page);
+
   }
 }
 
