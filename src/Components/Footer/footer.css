@@ -1,0 +1,40 @@
+
+.footer__wrapper
+{
+  width: 90%;
+  max-width: 260px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+  position: fixed;
+  left: 5%;
+  right: 5%;
+  top: 96%;
+
+  background-color: rgb(32, 141, 55);
+
+  border-radius: 5px;
+}
+
+@media screen and (min-width:600px)
+{
+  .footer__wrapper
+  {
+    max-width: 350px;
+  }
+}
+
+.footer__select-wrapper
+{
+  display:flex;
+  align-items: center;
+  margin: .3rem;
+}
+
+.footer__page-wrapper
+{
+  display:flex;
+  margin: .3rem;
+}

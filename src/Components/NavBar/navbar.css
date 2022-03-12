@@ -1,0 +1,51 @@
+.navbar__wrapper
+{
+  width: 80%;
+  max-width: 260px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto;
+
+  /* position: fixed; */
+}
+
+@media screen and (min-width:600px)
+{
+  .navbar__wrapper
+  {
+    max-width: 350px;
+  }
+}
+
+.navbar__wrapper-input
+{
+  min-width: 80%;
+  min-height: 100%;
+  text-align: center;
+
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+@media screen and (min-width:1024px)
+{
+  .navbar__wrapper-input
+  {
+    width: 100%;
+  }
+}
+
+.navbar-icon-burger
+{
+  margin-left: 8px;
+}
+
+@media screen and (min-width:1024px)
+{
+  .navbar-icon-burger
+  {
+    display:none;
+  }
+}
