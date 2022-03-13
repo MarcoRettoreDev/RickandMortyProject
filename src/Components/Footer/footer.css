@@ -2,6 +2,7 @@
 .footer__wrapper
 {
   width: 90%;
+  height: 5rem;
   max-width: 260px;
   display:flex;
   justify-content: space-between;
@@ -11,11 +12,13 @@
   position: fixed;
   left: 5%;
   right: 5%;
-  top: 96%;
+  top: 94%;
 
   background-color: rgb(32, 141, 55);
 
   border-radius: 5px;
+
+  font-size: var(--normal-font-size);
 }
 
 @media screen and (min-width:600px)
@@ -30,11 +33,36 @@
 {
   display:flex;
   align-items: center;
-  margin: .3rem;
+  margin-left: 1rem;
 }
 
+.footer__buttons_wrapper
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.button_prev
+{
+  width: 3rem;
+  margin-right: 3rem;
+  background-repeat: no-repeat;
+}
+
+.button_next
+{
+  width: 3rem;
+  transform: rotate(180deg);
+}
 .footer__page-wrapper
 {
   display:flex;
-  margin: .3rem;
+  margin-right: 1rem;
 }
+
+.footer__page-wrapper span
+{
+  width: 1.2rem;
+}
+
+
