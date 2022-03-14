@@ -1,14 +1,13 @@
 
 import React, { useState, useEffect } from "react";
 import { Header } from "../Header/Header"
+import { SearchBar } from "../SearchBar/SearchBar";
 import { Main } from "../Main/Main";
 import { Card } from "../Card/Card";
 import { NavBar } from "../NavBar/NavBar";
-import { SearchBar } from "../SearchBar/SearchBar";
+import { Footer } from "../Footer/Footer";
 
 import "./app.css";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
-import { Footer } from "../Footer/Footer";
 
 function App() 
 {
@@ -60,6 +59,7 @@ function App()
           status = {character.status}
           specie = {character.species}
           dimension = {character.origin.name}
+          created = {character.created}
           />
         ) }
       </Main>

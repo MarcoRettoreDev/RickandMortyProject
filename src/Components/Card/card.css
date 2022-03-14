@@ -9,8 +9,16 @@
 
   background-color: var(--cyan);
 
-  border-radius: 0 0 5px 5px;
-  box-shadow: rgb(0 0 0 / 40%) 0 4px 12px 3px ;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 15px 2px rgba(110, 110, 110, 0.555) ;
+
+  transition: all 0.3s;
+}
+
+.main__card-wrapper:hover
+{
+  box-shadow: 0 4px 15px 3px rgba(110, 110, 110, 0.705);
+  transform: scale(105%);
 }
 
 @media screen and (min-width: 600px)
@@ -21,6 +29,7 @@
     min-height: 250px;
     max-width: 550px;
     display:flex;
+    border-radius: 0 10px 10px 0;
   }
 }
 
@@ -62,7 +71,7 @@
 {
   display:flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .card-body-header h3
@@ -76,6 +85,7 @@
   .card-body-header
   {
     width: 330px;
+    min-height: 50px;
   }
 }
 
@@ -85,34 +95,24 @@
   flex-direction: column;
   justify-content: space-between;
   
-  margin: auto 0;
+  margin: rem 0 0 0;
 }
 
-.card-body-title p
-{
-  margin: .3rem 0;
-}
-
+.card-body-title p,
 .card-body-text p
 {
   margin: .3rem 0;
+  color: rgb(47, 47, 47);
 }
 
 @media screen and (min-width: 600px)
 {
-
   .card-body-title
   {
-    margin: 2rem 0;
+     margin: 1rem 0 0 0;
   }
-
-  .card-body-title p,
-  .card-body-text p
-  {
-    margin-top: 1.4rem;
-  }
- 
 }
+
 /* Dimension */
 
 .card-body-text 
@@ -130,4 +130,26 @@
 {
   font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;
   font-weight: bold;
+  background-color: var(--black);
+  padding: 4px 8px;
+
+  border-radius: 5px;
+}
+
+.alive
+{
+  /* border: 1px solid var(--green); */
+  color: var(--green-soft);
+}
+
+.dead
+{
+  /* border: 1px solid var(--red); */
+  color: var(--red);
+}
+
+.unknown
+{
+  /* border: 1px solid var(--black); */
+  color: var(--white);
 }

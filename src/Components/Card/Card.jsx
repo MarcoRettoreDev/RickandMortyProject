@@ -1,7 +1,7 @@
 import React from "react";
 import './card.css';
 
-const Card = ({name, img, status ,specie, dimension}) =>
+const Card = ({name, img, status ,specie, dimension, created}) =>
 {
   
   return(
@@ -12,15 +12,19 @@ const Card = ({name, img, status ,specie, dimension}) =>
       <div className="card-text-wrapper">
         <div className="card-body-header">
           <h3>{name}</h3>
-          <p className="status">{status}</p>
+          <p className={`${status.toLowerCase()} status`}>{status.toLowerCase()}</p>
         </div>
         <div className="card-body-title">
-          <h4>Specie</h4>
+          <h4>Specie:</h4>
           <p>{specie}</p>
         </div>
         <div className="card-body-text">
-          <h4>Dimension</h4>
+          <h4>Dimension:</h4>
           <p>{dimension}</p>
+        </div>
+        <div className="card-body-text">
+          <h4>Created: </h4>
+          <p>{created.slice(0, 10)}</p>  
         </div>
       </div>
     </article>

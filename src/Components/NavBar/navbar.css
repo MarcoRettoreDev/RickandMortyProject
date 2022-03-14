@@ -47,7 +47,6 @@
 {
   width: 3rem;
   margin-right: 3rem;
-  background-repeat: no-repeat;
 }
 
 .button_next
@@ -83,7 +82,7 @@
 .dropup-content {
   display: none;
   position: absolute;
-  bottom: 38px;
+  bottom: 30px;
   left: -18px;
   background-color: #f1f1f1;
   min-width: 100px;
