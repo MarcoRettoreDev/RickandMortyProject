@@ -7,7 +7,7 @@ const Card = ({name, img, status ,specie, dimension, created}) =>
   return(
     <article className="main__card-wrapper">
       <div className="card-img-wrapper">
-        <img src={img}></img>
+        <img src={img} alt={name}></img>
       </div>
       <div className="card-text-wrapper">
         <div className="card-body-header">

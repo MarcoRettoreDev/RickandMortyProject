@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import arrowImg from '../../assets/svg/left-arrow-back.svg'
-import "./navBar.css";
+import "./navbar.css";
 
 function NavBar ({page, setPage})
 {
