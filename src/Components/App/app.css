@@ -9,12 +9,26 @@
 
 :root
 {
+  --title-font : 'Finger Paint', cursive;
+  --body-font: 'Roboto Mono', Arial, Helvetica, sans-serif;
+  
+  --small-font-size: 1.2rem;
   --normal-font-size: 1.6rem;
   --medium-font-size: 2.0rem;
   --big-font-size: 2.4rem;
 
   --normal-line-height: 1.6rem;
   --big-line-height: 2.2rem;
+
+  --red: rgb(224, 21, 21);
+  --green: rgb(10, 175, 38);
+  --green-soft: rgb(10, 134, 83);
+  --cyan: rgb(19, 130, 134);
+  --white: #fff;
+  --grey: rgb(207, 206, 206);
+  --black: #000;
+  --black-soft: rgba(0, 0, 0, 0.918)
+
 }
 
 html
@@ -26,7 +40,7 @@ html
 body{
   height: 100vh;
   width: 100%;
-  background-color: rgb(105, 109, 76);
+  background-color: var(--black-soft);
 }
 
 #root

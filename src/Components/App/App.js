@@ -1,12 +1,14 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "../Header/Header"
 import { Main } from "../Main/Main";
 import { Card } from "../Card/Card";
-import { Footer } from "../Footer/Footer";
 import { NavBar } from "../NavBar/NavBar";
+import { SearchBar } from "../SearchBar/SearchBar";
 
 import "./app.css";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
+import { Footer } from "../Footer/Footer";
 
 function App() 
 {
@@ -17,38 +19,56 @@ function App()
   
   // Characters state
   const [characters, setCharacters] = useState([]);
+  const [searchCharacter, setSearchCharacter] = useState("");
 
-  React.useEffect(() =>
+  const filterCharacters = event =>
   {
-    async function fetchCharacters ()
-    {
-      const fullResponse = await fetch(`${API}/character?page=${page}`);
-      const responseJson = await fullResponse.json();
-      setCharacters(responseJson);
-      console.log(characters.results);  
-    }
-    fetchCharacters();
-  }, [page]);
-  
-  const checkCharacters = characters;
+    const value = event.target.value.toLowerCase();
+    const filteredUsers = searchCharacter.filter(
+      character => (`${character.name}`.toLocaleLowerCase()
+      .includes(value)
+      )
+    )
+    setCharacters(filteredUsers);
+  }
+
+  const  fetchCharacters = async (api) =>
+  {
+    await fetch(`${api}/character?page=${page}`)
+      .then(response => response.json())
+      .then(data => {setCharacters(data.results); setSearchCharacter(data.results)})
+      .catch(error => console.error(error))
+  };
+
+  useEffect(()=>
+  {
+    fetchCharacters(API)
+  }, [page])
 
   return (
     <>
       <Header/>
-      <NavBar/>
+      <SearchBar
+        filterCharacters = {filterCharacters}
+      />
       <Main>
-        {checkCharacters.length != 0 && <Card
-        name = {characters.results[0].name}
-        img = {characters.results[0].image}
-        status = {characters.results[0].status}
-        specie = {characters.results[0].species}
-      ></Card>}
-        
+        { characters.map((character, index)=>
+          <Card 
+          name={character.name} 
+          key= {index}
+          img = {character.image}
+          status = {character.status}
+          specie = {character.species}
+          dimension = {character.origin.name}
+          />
+        ) }
       </Main>
-      <Footer
+      <NavBar
         page = {page}
         setPage = {setPage}
-      ></Footer>
+      ></NavBar>
+
+      <Footer/>
     </>
   );
 }

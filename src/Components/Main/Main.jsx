@@ -5,9 +5,7 @@ function Main(props)
 {
   return (
     <main className="main__wrapper">
-    
       {props.children}
-
     </main>
   )
 }

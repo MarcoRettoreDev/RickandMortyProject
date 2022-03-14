@@ -11,6 +11,14 @@
   font-size: var(--normal-font-size);
 }
 
+@media screen and (min-width: 600px)
+{
+  .main__wrapper
+  {
+    margin: 3rem auto;
+  }
+} 
+
 @media screen and (min-width: 1024px)
 {
   .main__wrapper
