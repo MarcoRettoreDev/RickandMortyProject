@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/RickandMortyProject/static/css/main.31261c6e.css",
+    "main.js": "/RickandMortyProject/static/js/main.0aa28b41.js",
+    "static/media/Rick and morty-png-circle.png": "/RickandMortyProject/static/media/Rick and morty-png-circle.0f37d1d3c835eecaabb5.png",
+    "static/media/left-arrow-back.svg": "/RickandMortyProject/static/media/left-arrow-back.b235855d51025d01e8da6ce85eb80c8a.svg",
+    "index.html": "/RickandMortyProject/index.html",
+    "main.31261c6e.css.map": "/RickandMortyProject/static/css/main.31261c6e.css.map",
+    "main.0aa28b41.js.map": "/RickandMortyProject/static/js/main.0aa28b41.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31261c6e.css",
+    "static/js/main.0aa28b41.js"
+  ]
+}
