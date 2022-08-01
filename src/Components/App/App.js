@@ -1,5 +1,8 @@
 
 import React, { useState, useEffect } from "react";
+import { useQuery } from 'react-query'
+
+// Components
 import { Header } from "../Header/Header"
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Main } from "../Main/Main";
@@ -31,17 +34,15 @@ function App()
     setCharacters(filteredUsers);
   }
 
-  const  fetchCharacters = async (api) =>
-  {
-    await fetch(`${api}/character?page=${page}`)
-      .then(response => response.json())
-      .then(data => {setCharacters(data.results); setSearchCharacter(data.results)})
-      .catch(error => console.error(error))
-  };
+  const { isLoading, error, data } = useQuery('repoData', () =>
+     fetch(`${API}/character?page=${page}`)
+      .then(res => res.json() )
+   )
 
   useEffect(()=>
   {
-    fetchCharacters(API)
+    setCharacters(data.results);
+    setSearchCharacter(data.results);
   }, [page])
 
   return (
