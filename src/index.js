@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './Components/App/App';
-import ReactQuery from './Components/ReactQuery';
+import ReactQuery from './Helpers/ReactQuery';
 
 ReactDOM.render(
   <ReactQuery>

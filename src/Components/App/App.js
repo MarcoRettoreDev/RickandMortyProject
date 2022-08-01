@@ -1,16 +1,15 @@
-
 import React, { useState, useEffect } from "react";
 import { useQuery } from 'react-query'
 
 // Components
-import { Header } from "../Header/Header"
-import { SearchBar } from "../SearchBar/SearchBar";
-import { Main } from "../Main/Main";
-import { Card } from "../Card/Card";
-import { NavBar } from "../NavBar/NavBar";
-import { Footer } from "../Footer/Footer";
+import { Header } from "../Header"
+import { SearchBar } from "../SearchBar";
+import { Main } from "../Main";
+import { Card } from "../Card";
+import { NavBar } from "../NavBar";
+import { Footer } from "../Footer";
 
-import "./app.css";
+import "../../Styles/App.scss";
 
 function App() 
 {
@@ -22,7 +21,7 @@ function App()
   // Characters state
   const [characters, setCharacters] = useState([]);
   const [searchCharacter, setSearchCharacter] = useState("");
-
+ 
   const filterCharacters = event =>
   {
     const value = event.target.value.toLowerCase();
@@ -37,7 +36,9 @@ function App()
   const { isLoading, error, data } = useQuery('repoData', () =>
      fetch(`${API}/character?page=${page}`)
       .then(res => res.json() )
-   )
+  )
+  
+  console.log(data)
 
   useEffect(()=>
   {

@@ -1,6 +1,5 @@
 import React from "react";
-import logo from "../../assets/img/Rick and morty-png-circle.png"
-import "./header.css";
+import logo from "../assets/img/Rick and morty-png-circle.png"
 
 function Header ()
 {
