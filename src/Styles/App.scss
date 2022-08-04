@@ -1,5 +1,8 @@
 @use './Base.scss';
+@use './WelcomePage.scss';
 @use './Main.scss';
 @use './NavBar.scss';
 @use './SearchBar.scss';
-@use './Card.scss'
+@use './Card.scss';
+@use './loading-spinner.scss';
+@use './ErrorComponent.scss';

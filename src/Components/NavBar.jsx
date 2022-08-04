@@ -1,32 +1,89 @@
-import React from "react";
-import arrowImg from '../assets/svg/left-arrow-back.svg'
+import { useContext } from "react";
+import arrowLeft from "../assets/svg/arrow-left-r.svg";
+import arrowRight from "../assets/svg/arrow-right-r.svg";
 
-function NavBar ({page, setPage})
-{
-  
-  return(
-    <nav className="navbar__wrapper">
-      <div className="navbar__select-wrapper">
-        <div className="dropup">
-          <button className="dropbtn">Jump</button>
-          <div className="dropup-content">
-            <a href="#" onClick={() =>setPage(10)}>Page 10</a>
-            <a href="#" onClick={() =>setPage(20)}>Page 20</a>
-            <a href="#" onClick={() =>setPage(30)}>Page 30</a>
-            <a href="#" onClick={() =>setPage(40)}>Page 40</a>
+import { myContext } from "../Helpers/UseContext";
+import { ActionTypes } from "../Helpers/ActionTypes";
+import { useEffect } from "react";
+
+function NavBar() {
+  const { state, dispatch } = useContext(myContext);
+
+  const changePage = (page) => {
+    dispatch({ type: ActionTypes.SET_PAGE, payload: page });
+  };
+
+  const pages = [];
+
+  const renderJumpPage = () => {
+    for (let i = 1; i <= state.totalPages; i++) {
+      pages.push(
+        <li onClick={() => changePage(i)} key={i}>
+          {i}
+        </li>
+      );
+    }
+  };
+
+  useEffect(() => {
+    renderJumpPage();
+  }, [state.totalPages]);
+
+  return (
+    <div className="navbarContainer">
+      <div className="container">
+        <nav className="d-flex flex-row justify-content-center align-items-center">
+          <div className="navbarButtonWrapper">
+            {state.page !== 1 ? (
+              <img
+                className="button_prev"
+                onClick={() => changePage(state.page - 1)}
+                src={arrowLeft}
+              ></img>
+            ) : (
+              <img
+                style={{ opacity: 0 }}
+                onClick={() => {
+                  if (state.page != 1) changePage(state.page - 1);
+                }}
+                src={arrowLeft}
+              ></img>
+            )}
+            <div className="navbarPageWrapper">
+              <span>{state.page}</span>
+            </div>
+            {state.page < state.totalPages ? (
+              <img
+                className="button_next"
+                onClick={() => changePage(state.page + 1)}
+                src={arrowRight}
+              ></img>
+            ) : (
+              <img
+                style={{ opacity: 0 }}
+                onClick={() => {
+                  if (state.page < state.totalPages) changePage(state.page + 1);
+                }}
+                src={arrowRight}
+              ></img>
+            )}
           </div>
-        </div>
+          <div className="navbarSelectWrapper">
+            <div className="dropup">
+              <button className="dropbtn">Select</button>
+              <div className="dropup-content">
+                {/* <a href="#" onClick={() =>changePage(10)}>Page 10</a>
+                <a href="#" onClick={() =>changePage(20)}>Page 20</a>
+                <a href="#" onClick={() =>changePage(30)}>Page 30</a>
+                <a href="#" onClick={() =>changePage(40)}>Page 40</a> */}
+                {pages}
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
-      <div className="navbar__buttons_wrapper">
-        <img className="button_prev" onClick={() => {if (page > 1) setPage(page - 1) }} src={arrowImg}></img>
-        <img className="button_next" onClick={() => {if (page < 42) setPage(page + 1) }} src={arrowImg}></img>
-      </div>
-      <div className="navbar__page-wrapper">
-        <p>Page:</p>
-        <span>{page}</span>
-      </div>
-    </nav>
-  )
-};
+    </div>
+  );
+}
 
 export { NavBar };

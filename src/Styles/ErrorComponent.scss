@@ -1,0 +1,47 @@
+@use 'Base.scss';
+
+.errorComponentContainer{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  min-height: 85vh;
+
+  & .title{
+    font-size: var(--big-font-size);
+    font-family: var(--title-font);
+    color: Base.$white;
+    margin: 3rem 0 1rem;
+  }
+
+  & .subtitle{
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+    color: Base.$white;
+    margin: 1rem 0;
+    text-align: center;
+  }
+}
+
+.errorImgWrapper{
+  height: 60vh;
+  width: 80vw;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 1024px) {
+    height: 80vh;
+  }
+
+  & > img{
+    width: 100%;
+    height: auto;
+    object-position: center;
+    @media screen and (min-width: 1024px) {
+      max-width: 40vw;
+    }
+  }
+}

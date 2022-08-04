@@ -1,0 +1,52 @@
+@use 'Base.scss';
+
+.welcomeCardWrapper{
+  width: 70vw;
+  height: 25vh;
+  text-decoration: none !important;
+
+  @media screen and (min-width: 1024px) {
+    width: 60vw;
+    height: 30vh;
+  }
+
+  @media screen and (min-width: 1024px){
+    max-width: 500px;
+  }
+  
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  align-items: flex-end;
+}
+
+#Locations{
+  background-image: url('../images/Portada_dimensions.jpg');
+}
+
+#Episodes{
+  background-image: url('../images/Portada_episodes.jpg');
+}
+
+#Characters{
+  background-image: url('../images/Portada_personajes.jpg');
+}
+
+.welcomeCardBackgroundFade{
+  height: 4vh;
+  border-radius: 0px 0px 10px 10px;
+  background-color: Base.$background-fade;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > h1{
+    text-decoration: none;
+    margin: 0;
+    color: Base.$white;
+    text-decoration-line: none;
+    font-family: Base.$main-title-font;
+  }
+}

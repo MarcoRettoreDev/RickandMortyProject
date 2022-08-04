@@ -1,8 +1,5 @@
-import React from "react";
-
 const Card = ({name, img, status ,specie, dimension, created}) =>
 {
-  
   return(
     <article className="main__card-wrapper">
       <div className="card-img-wrapper">

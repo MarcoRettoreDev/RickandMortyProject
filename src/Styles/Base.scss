@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 *,
 *::after,
 *::before
@@ -28,8 +30,21 @@
   --grey: rgb(207, 206, 206);
   --black: #000;
   --black-soft: rgba(0, 0, 0, 0.931);
-
 }
+
+/*  FONTS  */
+$main-title-font:'Special Elite', cursive;
+
+/* COLORS */
+$white: #DFDFDF;
+$background-color: #282828;
+$background-color-secondary: #F1F3F4;
+$light-grey: #c2c2c2;
+$background-fade: rgba(0,0,0,0.65);
+$text-color-over: #ababab;
+
+/*  DECORATIONS  */
+$button-border-radius: 5px;
 
 html
 {
@@ -47,67 +62,67 @@ body{
 {
   min-height: 100%;
   width: 100%;
+  background-color: $background-color;
 }
 
 /*    HEADER     */
-.header__img-wrapper
-{
-  width: 320px;
-  margin: 0 auto;
+.navbar{
+  background-color: $background-color-secondary;
 }
 
-.header__img-wrapper img
-{
-  width: 100%;
+.navbarLogo{
+  max-width: 7rem;
+  max-height: 7rem;
 }
 
-@media screen and (min-width: 600px)
-{
-  .header__img-wrapper
-  {
-    width: 420px;
+.navbar-nav{
+  @media screen and (max-width: 1000px) {
+    margin-top: 2rem;
+  }
+    
+
+  @media screen and (min-width: 1000px) {
+    margin-left: 3rem;
+    & > li{
+      margin-right: 1rem;
+    }
   }
 }
 
-@media screen and (min-width: 1024px)
-{
-  .header__img-wrapper
-  {
-    width: 520px;
+.nav-link{
+  color: $background-color !important;
+}
+
+.nav-link:hover{
+  color: $text-color-over !important;
+}
+
+.navbar-collapse{
+  font-size: 1.6rem;
+ 
+  @media screen and (max-width: 768px) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
 
-@media screen and (min-width: 1200px)
-{
-  .header__img-wrapper
-  {
-    width: 768px;
-  }
+.dropdown-menu{
+  font-size: 1.4rem !important;
 }
-
 
 /*    FOOTER     */
 
 .footer__wrapper
 {
   width: 100%;
-  display:grid;
-  place-items: center;
 
   font-size: var(--normal-font-size);
-  color: #fafafa;
+  color: $background-color;
+  background-color: $background-color-secondary;
 }
 
 .footer__wrapper a
 {    
-  color: #fafafa;
-}
-
-@media screen and (min-width: 600px)
-{
-  .footer__wrapper
-  {
-   width: 30%;
-  }
+  color: $background-color;
 }
