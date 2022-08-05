@@ -9,7 +9,7 @@ export const Router = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<WelcomePage />} />
+        <Route default path="/" element={<WelcomePage />} />
 
         <Route element={<Section />} >
           <Route path="characters" element={<Characters />} />
