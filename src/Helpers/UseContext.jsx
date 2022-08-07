@@ -5,9 +5,12 @@ const myContext = createContext({});
 
 const initialState = {
   page: 1,
-  fetchType: '',
   totalPages: 1,
-  searchInput: ''
+  searchInput: '',
+  totalEpisodes: 0,
+  totalLocations: 0,
+  currentCharacters: [],
+  pageInfo: []
 };
 
 const ContextProvider = ({ children }) => {

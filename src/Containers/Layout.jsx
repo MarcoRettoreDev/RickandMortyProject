@@ -4,7 +4,7 @@ import { Footer } from '../Components/Footer';
 
 import { Outlet } from 'react-router-dom';
 
-const Section = () =>{
+const Layout = () =>{
 
   return (
     <>
@@ -20,4 +20,4 @@ const Section = () =>{
   )
 }
 
-export { Section };
+export { Layout };

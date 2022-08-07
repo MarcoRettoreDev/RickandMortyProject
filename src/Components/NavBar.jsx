@@ -7,6 +7,7 @@ import { ActionTypes } from "../Helpers/ActionTypes";
 import { useEffect } from "react";
 
 function NavBar() {
+  
   const { state, dispatch } = useContext(myContext);
 
   const changePage = (page) => {
@@ -24,6 +25,8 @@ function NavBar() {
       );
     }
   };
+  
+  console.log(state)
 
   useEffect(() => {
     renderJumpPage();

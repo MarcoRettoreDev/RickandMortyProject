@@ -16,18 +16,38 @@ const Reducer = (state, action) => {
       }
     }
 
-    // case ActionTypes.SET_CHARACTERS:{
-    //   console.log(action.payload)
-    //   return {
-    //     ...state,
-    //     characters: action.payload
-    //   }
-    // }
+    case ActionTypes.SET_TOTAL_EPISODES:{
+      return {
+        ...state,
+        totalEpisodes: action.payload
+      }
+    }
+
+    case ActionTypes.SET_TOTAL_LOCATIONS:{
+      return {
+        ...state,
+        totalLocations: action.payload
+      }
+    }
 
     case ActionTypes.SET_SEARCH_INPUT:{
       return {
         ...state,
         searchInput: action.payload
+      }
+    }
+
+    case ActionTypes.SET_PAGE_INFO:{
+      return {
+        ...state,
+        pageInfo: action.payload
+      }
+    }
+
+    case ActionTypes.SET_CURRENT_CHARACTERS:{
+      return {
+        ...state,
+        currentCharacters: [action.payload, ...state.currentCharacters]
       }
     }
 
