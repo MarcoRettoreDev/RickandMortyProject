@@ -26,8 +26,6 @@ function NavBar() {
     }
   };
   
-  console.log(state)
-
   useEffect(() => {
     renderJumpPage();
   }, [state.totalPages]);

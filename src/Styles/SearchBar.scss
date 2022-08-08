@@ -7,17 +7,13 @@
 
   margin: 0 auto;
 
-  @media screen and (max-width: 990px)
-  {
+  @media screen and (max-width: 990px) {
     width: 60%;
     margin: 1rem auto 1rem;
   }
-
 }
 
-
-.searchbar__wrapper-input
-{
+.searchbar__wrapper-input{
   min-width: 100%;
   text-align: center;
 
@@ -26,18 +22,14 @@
 
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-}
 
-.searchbar__wrapper-input:focus
-{
-  outline: 1px solid var(--grey)
-}
-
-@media screen and (min-width:1024px)
-{
-  .searchbar__wrapper-input
-  {
+  @media screen and (min-width:1024px){
     width: 100%;
   }
 }
+
+.searchbar__wrapper-input:focus {
+  outline: 1px solid var(--grey)
+}
+
 

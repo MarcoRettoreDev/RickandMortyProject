@@ -39,23 +39,25 @@ const Characters = () =>{
   if (isError) {
     return <ErrorComponent/>;
   }
-
+  console.log(data.results)
   return (
     <>
       {
         data?.results?.length > 0 ? (
         <>
           <main className="main__wrapper">
-            { data.results.map((character, index)=>
-                <Card 
-                name={character.name} 
-                key= {index}
-                img = {character.image}
-                status = {character.status}
-                specie = {character.species}
-                dimension = {character.origin.name}
-                created = {character.created}
-                />
+            { data.results.map((character, index)=>{
+                  const ChapterID = character.episode[0].split('/')[5];
+                  return (<Card  
+                  name={character.name} 
+                  key= {character.id}
+                  img = {character.image}
+                  status = {character.status}
+                  specie = {character.species}
+                  episode = {ChapterID}
+                  location = {character.location.name}
+                  />)
+                }
               )
             }
           </main>

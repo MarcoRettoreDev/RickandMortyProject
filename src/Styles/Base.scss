@@ -34,17 +34,34 @@
 
 /*  FONTS  */
 $main-title-font:'Special Elite', cursive;
+$font-title: 'Finger Paint', cursive;
+$font-body: 'Roboto Mono', Arial, Helvetica, sans-serif;
+
 
 /* COLORS */
-$white: #DFDFDF;
-$background-color: #282828;
-$background-color-secondary: #F1F3F4;
-$light-grey: #c2c2c2;
+$white: #FAFAFA;
+$red: #c10909;
+$green: #23b107;
+$black-night: #202329;
+$gray-mid: #3c3e44;
+$gray-normal: #b1b2b5;
+$color-secondary: #0d758c;
+
 $background-fade: rgba(0,0,0,0.65);
-$text-color-over: #ababab;
+
+$background-color: red;
+$background-color-secondary: green;
+$light-grey: blue;
+$text-color-over: yellow;
 
 /*  DECORATIONS  */
 $button-border-radius: 5px;
+
+/*  SIZES  */
+$fontSize-small: 1.2rem;
+$fontSize-normal: 1.6rem;
+$fontSize-medium: 2.0rem;
+$fontSize-big: 2.4rem;
 
 html
 {
@@ -55,19 +72,18 @@ html
 body{
   height: 100vh;
   width: 100%;
-  background-color: var(--black-soft);
 }
 
 #root
 {
   min-height: 100%;
   width: 100%;
-  background-color: $background-color;
+  background-color: $black-night;
 }
 
 /*    HEADER     */
 .navbar{
-  background-color: $background-color-secondary;
+  background-color: $white;
 }
 
 .navbarLogo{
@@ -77,10 +93,10 @@ body{
 
 .navbar-nav{
   @media screen and (max-width: 1000px) {
-    margin-top: 2rem;
+    margin: 2rem 0rem 0rem 1rem;
+    
   }
     
-
   @media screen and (min-width: 1000px) {
     margin-left: 3rem;
     & > li{
@@ -90,11 +106,12 @@ body{
 }
 
 .nav-link{
-  color: $background-color !important;
+  color: $black-night !important;
+  font-weight: bold;
 }
 
 .nav-link:hover{
-  color: $text-color-over !important;
+  color: $gray-normal !important;
 }
 
 .navbar-collapse{
@@ -108,7 +125,7 @@ body{
 
 
 .dropdown-menu{
-  font-size: 1.4rem !important;
+  font-size: $fontSize-small!important;
 }
 
 /*    FOOTER     */
@@ -117,12 +134,12 @@ body{
 {
   width: 100%;
 
-  font-size: var(--normal-font-size);
-  color: $background-color;
-  background-color: $background-color-secondary;
+  font-size: $fontSize-normal;
+  color: $gray-mid;
+  background-color: $white;
 }
 
 .footer__wrapper a
 {    
-  color: $background-color;
+  color: $black-night;
 }

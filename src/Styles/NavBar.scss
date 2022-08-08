@@ -1,7 +1,7 @@
 @use 'Base.scss';
 
 .navbarContainer{
-  background-color: Base.$background-color-secondary;
+  background-color: Base.$white;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -16,14 +16,22 @@
   margin: 0 13% 0 20%;
 }
 
-.button_prev
-{
-  width: 3rem;
-}
-
+.button_prev,
 .button_next
 {
   width: 3rem;
+  background-clip: padding-box;
+  border-radius: 6px;
+}
+
+.button_prev:hover{
+  cursor: pointer;
+  background-color: Base.$color-secondary;
+}
+
+.button_next:hover{
+  cursor: pointer;
+  background-color: Base.$color-secondary;
 }
 
 .navbarSelectWrapper{
@@ -38,25 +46,23 @@
   display:flex;
   justify-content: center;
   align-items: center;
-  color: Base.$background-color;
+  color: Base.$black-night;
   & > span{
     padding: .5rem .8rem;
-    // background-color: Base.$light-grey;
     border-radius: Base.$button-border-radius;
     border: 3px solid black;
-
   }
 }
 
 /* Dropup Button */
 .dropbtn {
-  color: Base.$background-color;
+  color: Base.$black-night;
   padding: 4px 8px;
-  // background-color: Base.$light-grey;
-  font-size: var(--normal-font-size);
-  font-family: var(--body-font);
+  background-color: transparent;
+  font-size: Base.$fontSize-normal;
+  font-family: Base.$font-body;
   border: 3px solid black;
-  border-radius: Base.$button-border-radius
+  border-radius: Base.$button-border-radius;
 }
 
 /* The container <div> - needed to position the dropup content */
@@ -71,7 +77,7 @@
   position: absolute;
   bottom: 32px;
   left: -18px;
-  background-color: #f1f1f1;
+  background-color: Base.$white;
   min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -79,7 +85,7 @@
 
 /* Links inside */
 .dropup-content a {
-  color: Base.$background-color;
+  color: Base.$black-night;
   padding: 6px 12px;
   text-decoration: none;
   display: block;
@@ -87,8 +93,7 @@
 
 /* Change color of links */
 .dropup-content a:hover {
-  background-color: Base.$light-grey;
-  color: Base.$background-color;
+  background-color: Base.$gray-mid;
 }
 
 /* Show the dropup menu on hover */
@@ -98,5 +103,5 @@
 
 /* Change the background color of the dropup button when the dropup content is shown */
 .dropup:hover .dropbtn {
-  background-color: Base.$light-grey;
+  background-color: Base.$color-secondary;
 }

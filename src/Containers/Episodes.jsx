@@ -39,7 +39,7 @@ const Episodes = () =>{
   if (isError) {
     return <ErrorComponent/>;
   }
-
+  
   return (
     <>
       {

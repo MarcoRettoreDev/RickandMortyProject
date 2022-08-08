@@ -1,3 +1,4 @@
+@use 'Base.scss';
 
 .main__wrapper
 {
@@ -8,7 +9,7 @@
 
   display:grid;
   grid-template-columns: 1fr;
-  font-size: var(--normal-font-size);
+  font-size: Base.$fontSize-normal;
 }
 
 @media screen and (min-width: 600px)
