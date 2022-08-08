@@ -10,7 +10,6 @@ import { LoadingComponent } from '../Components/LoadingComponent';
 import { ErrorComponent } from '../Components/ErrorComponent';
 
 const Characters = () =>{
-
   const API = 'https://rickandmortyapi.com/api';
 
   const { state, dispatch } = useContext(myContext);
@@ -39,13 +38,13 @@ const Characters = () =>{
   if (isError) {
     return <ErrorComponent/>;
   }
-  console.log(data.results)
+
   return (
     <>
       {
         data?.results?.length > 0 ? (
         <>
-          <main className="main__wrapper">
+          <main className="row my-5">
             { data.results.map((character, index)=>{
                   const ChapterID = character.episode[0].split('/')[5];
                   return (<Card  
@@ -56,6 +55,7 @@ const Characters = () =>{
                   specie = {character.species}
                   episode = {ChapterID}
                   location = {character.location.name}
+                  created= {character.created}
                   />)
                 }
               )

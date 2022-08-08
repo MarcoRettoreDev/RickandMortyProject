@@ -9,29 +9,6 @@
   box-sizing: content-box;
 }
 
-:root
-{
-  --title-font : 'Finger Paint', cursive;
-  --body-font: 'Roboto Mono', Arial, Helvetica, sans-serif;
-  
-  --small-font-size: 1.2rem;
-  --normal-font-size: 1.6rem;
-  --medium-font-size: 2.0rem;
-  --big-font-size: 2.4rem;
-
-  --normal-line-height: 1.6rem;
-  --big-line-height: 2.2rem;
-
-  --red: rgb(204, 20, 20);
-  --green: rgb(10, 175, 38);
-  --green-soft: rgb(10, 134, 83);
-  --cyan: rgb(19, 130, 134);
-  --white: #fff;
-  --grey: rgb(207, 206, 206);
-  --black: #000;
-  --black-soft: rgba(0, 0, 0, 0.931);
-}
-
 /*  FONTS  */
 $main-title-font:'Special Elite', cursive;
 $font-title: 'Finger Paint', cursive;
@@ -48,11 +25,6 @@ $gray-normal: #b1b2b5;
 $color-secondary: #0d758c;
 
 $background-fade: rgba(0,0,0,0.65);
-
-$background-color: red;
-$background-color-secondary: green;
-$light-grey: blue;
-$text-color-over: yellow;
 
 /*  DECORATIONS  */
 $button-border-radius: 5px;
@@ -81,6 +53,10 @@ body{
   background-color: $black-night;
 }
 
+a{
+  text-decoration: none !important;
+}
+
 /*    HEADER     */
 .navbar{
   background-color: $white;
@@ -107,11 +83,12 @@ body{
 
 .nav-link{
   color: $black-night !important;
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .nav-link:hover{
-  color: $gray-normal !important;
+  color: $color-secondary !important;
+  font-weight: bold !important;
 }
 
 .navbar-collapse{
@@ -122,7 +99,6 @@ body{
     margin-bottom: 2rem;
   }
 }
-
 
 .dropdown-menu{
   font-size: $fontSize-small!important;

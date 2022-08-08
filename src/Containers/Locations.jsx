@@ -45,7 +45,7 @@ const Locations = () =>{
     <>
       {
         data?.results?.length > 0 ? (
-          <section className="main__wrapper">
+          <section className="row my-5">
             { data.results.map((locations)=>
                 <CardLocations
                   key = {locations.id}

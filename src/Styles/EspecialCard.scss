@@ -1,0 +1,92 @@
+@use 'Base.scss';
+
+.especialDescription-container{
+  color: Base.$white;
+
+  margin:  5rem 0rem 3rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  & > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  & img{
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    top: -40px;
+  }
+
+  & img:hover{
+    cursor: pointer;
+  }
+}
+
+
+.especialCard-container{
+  max-width: 800px !important;
+
+  @media screen and (min-width: 1400px){
+    max-width: 900px !important;
+  }
+}
+
+.especialCard-wrapper{
+  background-color: Base.$gray-mid;
+  border-radius: Base.$button-border-radius;
+  color: Base.$white;
+  margin-bottom: 2rem;
+}
+
+.especialCard-content{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+
+  padding: .5rem .5rem;
+}
+
+.especialCard-header{
+  max-width: 50%;
+  margin-right: 1rem;
+
+  & > h3{
+    margin-left: 1rem ;
+  }
+}
+
+.especialCard-body{
+  min-width: 50%;
+  display:flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    min-width: 30%;
+  }
+
+  & .especialCard-airDate{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 1rem;
+
+    & p:first-child{
+      font-size: Base.$fontSize-small;
+      color: Base.$gray-normal;
+      text-align: left;
+    }
+  }
+
+  & .especialCard-episode{
+    @extend .especialCard-airDate;
+  }
+}

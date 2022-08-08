@@ -39,17 +39,19 @@ const Episodes = () =>{
   if (isError) {
     return <ErrorComponent/>;
   }
-  
+
+  console.log(data.results)
+
   return (
     <>
       {
          data?.results?.length > 0 ? (
-          <section className="main__wrapper">
+          <section className='row my-5'>
             { data.results.map((episode)=>
               <CardEpisodes
                 name = {episode.name}
-                airDate = {episode.airDate}
                 created = {episode.created}
+                episode = {episode.episode}
                 key = {episode.id}
                 id = {episode.id}
               />

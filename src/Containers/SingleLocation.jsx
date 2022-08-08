@@ -1,13 +1,15 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+
+import buttonGoBack from '../assets/svg/buttonGoBack.svg'
 import { LoadingComponent } from '../Components/LoadingComponent';
-import { useContext } from 'react';
-import { myContext } from '../Helpers/UseContext';
 import { ErrorComponent } from '../Components/ErrorComponent';
 import { Character } from '../Components/Character';
 
 const SingleLocation = () => {
+
+  const navigate = useNavigate();
 
   const API = 'https://rickandmortyapi.com/api';
 
@@ -18,7 +20,7 @@ const SingleLocation = () => {
   const { isLoading, isError, data } = useQuery([`location/${locationID}`], () =>
   axios.get(URIEPISODE)
     .then(res => res.data )
-)
+  )
 
   if (isLoading) {
     return <LoadingComponent/>;
@@ -28,25 +30,34 @@ const SingleLocation = () => {
     return <ErrorComponent/>;
   }
 
+  console.log(data)
+
   return (
   <>
-    <h1>{data.name}</h1>
-    <h2>{data.air_date}</h2>
-    {
-      data != 'undefined' ? (
-          data.residents.map((resident, i)=>{
-            const apiID = resident.split('/').filter(Boolean);
-            const characterID = apiID[apiID.length - 1];
-          return (
-            <Character
-              characterAPI = {characterID}
-              key = {i}
-            />
+    <div className='especialDescription-container'>
+      <img src={buttonGoBack} alt='Go back button' onClick={ () => navigate(-1) }></img>
+      <div>
+        <h1>{data.name}</h1>
+        <h2>{data.created.slice(0,10)}</h2>
+      </div>
+    </div>
+    <div className='row my-5'>
+      {
+        data !== undefined ? (
+            data.residents.map((resident, i)=>{
+              const apiID = resident.split('/').filter(Boolean);
+              const characterID = apiID[apiID.length - 1];
+            return (
+              <Character
+                characterAPI = {characterID}
+                key = {i}
+              />
+            )
+          })) : (
+            <LoadingComponent/>
           )
-        })) : (
-          <LoadingComponent/>
-        )
-    }
+      }
+    </div>
   </>
   )
 }
