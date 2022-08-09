@@ -4,7 +4,7 @@
 {
   width: 100%;
   max-width: 302px !important;
-  margin: 2rem auto;
+  margin: 2rem auto ;
 
   border: 1px solid Base.$black-night;
 
@@ -15,8 +15,12 @@
   transition: all 0.3s;
   padding: 0 !important;
 
+  & .main__card-wrapper:last-child{
+    margin-bottom: 10rem;
+  }
+
   @media screen and (min-width: 600px){
-    max-height: 300px;
+    max-height: 180px;
     max-width: 450px !important; //550 original
     display:flex;
     border-radius: 0 10px 10px 0;
@@ -29,6 +33,14 @@
 
 .main__card-wrapper:hover{
   transform: scale(105%);
+}
+
+.cardDeck article:last-child{
+  margin-bottom: 15rem !important;
+}
+
+.especialCardDeck a:last-child{
+  margin-bottom: 10rem !important;
 }
 
 .card-img-wrapper
@@ -124,13 +136,11 @@
   }
 }
 
-
 /* Status */
 .status{
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-
 }
 
 .alive

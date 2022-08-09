@@ -33,7 +33,7 @@ function NavBar() {
   return (
     <div className="navbarContainer">
       <div className="container">
-        <nav className="d-flex flex-row justify-content-center align-items-center">
+        <nav className="d-flex">
           <div className="navbarButtonWrapper">
             {state.page !== 1 ? (
               <img
@@ -69,20 +69,11 @@ function NavBar() {
               ></img>
             )}
           </div>
-          <div className="navbarSelectWrapper">
-            <div className="dropup">
-              <button className="dropbtn">Select</button>
-              <div className="dropup-content">
-                {/* <a href="#" onClick={() =>changePage(10)}>Page 10</a>
-                <a href="#" onClick={() =>changePage(20)}>Page 20</a>
-                <a href="#" onClick={() =>changePage(30)}>Page 30</a>
-                <a href="#" onClick={() =>changePage(40)}>Page 40</a> */}
-                {pages}
-              </div>
-            </div>
-          </div>
         </nav>
       </div>
+      <footer className="footer__wrapper">
+        <p> Made with ♥ by <a href="https://marcorettoredev.github.io/" rel="noreferer" target="_blank">Mr.Dev</a></p>
+      </footer>
     </div>
   );
 }

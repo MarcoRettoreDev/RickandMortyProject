@@ -108,11 +108,17 @@ a{
 
 .footer__wrapper
 {
-  width: 100%;
 
-  font-size: $fontSize-normal;
+  font-size: $fontSize-small;
   color: $gray-mid;
   background-color: $white;
+
+  position: fixed;
+  bottom: 0;
+
+  & p{
+    margin: 0;
+  }
 }
 
 .footer__wrapper a

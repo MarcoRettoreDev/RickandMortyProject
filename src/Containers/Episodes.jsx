@@ -46,7 +46,7 @@ const Episodes = () =>{
     <>
       {
          data?.results?.length > 0 ? (
-          <section className='row my-5'>
+          <section className='row my-5 especialCardDeck'>
             { data.results.map((episode)=>
               <CardEpisodes
                 name = {episode.name}

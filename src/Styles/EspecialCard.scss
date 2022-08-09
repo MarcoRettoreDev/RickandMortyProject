@@ -38,6 +38,10 @@
   }
 }
 
+.especialCard-wrapper:hover{
+  color: Base.$color-secondary !important;
+}
+
 .especialCard-wrapper{
   background-color: Base.$gray-mid;
   border-radius: Base.$button-border-radius;
@@ -71,6 +75,7 @@
 
   @media screen and (min-width: 768px) {
     min-width: 30%;
+    max-width: 30%;
   }
 
   & .especialCard-airDate{
@@ -83,6 +88,7 @@
       font-size: Base.$fontSize-small;
       color: Base.$gray-normal;
       text-align: left;
+      margin-bottom: .5rem;
     }
   }
 

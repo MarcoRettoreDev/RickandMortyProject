@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 
 import { LoadingComponent } from '../Components/LoadingComponent';
 import { ErrorComponent } from '../Components/ErrorComponent';
+import { SelectComponent } from '../Components/SelectComponent';
 
 const Characters = () =>{
   const API = 'https://rickandmortyapi.com/api';
@@ -24,6 +25,7 @@ const Characters = () =>{
     axios.get(URI)
       .then(res => res.data )
   )
+
 
   useEffect(() => {
     if(data !== undefined && !isError){
@@ -44,7 +46,8 @@ const Characters = () =>{
       {
         data?.results?.length > 0 ? (
         <>
-          <main className="row my-5">
+          <SelectComponent/>
+          <main className="row my-5 cardDeck">
             { data.results.map((character, index)=>{
                   const ChapterID = character.episode[0].split('/')[5];
                   return (<Card  

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import buttonGoBack from '../assets/svg/arrow-left-r.svg'
+import buttonGoBack from '../assets/svg/buttonGoBack.svg'
 import { LoadingComponent } from '../Components/LoadingComponent';
 import { ErrorComponent } from '../Components/ErrorComponent';
 import { Character } from '../Components/Character';
@@ -20,7 +20,7 @@ const SingleEpisode = () => {
   const { isLoading, isError, data } = useQuery([`episode/${episodeID}`], () =>
   axios.get(URIEPISODE)
     .then(res => res.data )
-)
+  )
 
   if (isLoading) {
     return <LoadingComponent/>;
@@ -39,7 +39,7 @@ const SingleEpisode = () => {
         <h2>{data.air_date}</h2>
       </div>
     </div>
-    <div className='row my-5'>
+    <div className='row my-5 cardDeck'>
       {
         data !== undefined ? (
             data.characters.map((character, i)=>{

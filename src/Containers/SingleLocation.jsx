@@ -41,7 +41,7 @@ const SingleLocation = () => {
         <h2>{data.created.slice(0,10)}</h2>
       </div>
     </div>
-    <div className='row my-5'>
+    <div className='row my-5 cardDeck'>
       {
         data !== undefined ? (
             data.residents.map((resident, i)=>{

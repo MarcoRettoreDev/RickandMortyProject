@@ -15,7 +15,7 @@ const Layout = () =>{
 
         <NavBar/>
 
-        <Footer/>
+        {/* <Footer/> */}
     </>
   )
 }
