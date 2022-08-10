@@ -9,7 +9,7 @@ import { LoadingComponent } from "./LoadingComponent";
 
 const Character = ({characterAPI}) => {
 
-  const { state, dispatch } = useContext(myContext);
+  const { dispatch } = useContext(myContext);
 
   const {isLoading, isError, data} = useQuery([`character-${characterAPI}`], () =>
     axios.get(`https://rickandmortyapi.com/api/character/${characterAPI}`)

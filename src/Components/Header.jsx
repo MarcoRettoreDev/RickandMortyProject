@@ -6,9 +6,8 @@ import logo from "../assets/icons/Logo_660x600.png";
 import { SearchBar } from "../Components/SearchBar";
 import { Link } from 'react-router-dom'; 
 
-
 const Header = () =>{
-  const {state ,dispatch } = useContext(myContext);
+  const { dispatch } = useContext(myContext);
 
   const resetState = () => {
     dispatch({type: ActionTypes.SET_SEARCH_INPUT, payload: ""});

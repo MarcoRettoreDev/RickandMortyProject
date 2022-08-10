@@ -45,7 +45,7 @@ function NavBar() {
               <img
                 style={{ opacity: 0 }}
                 onClick={() => {
-                  if (state.page != 1) changePage(state.page - 1);
+                  if (state.page !== 1) changePage(state.page - 1);
                 }}
                 src={arrowLeft}
               ></img>

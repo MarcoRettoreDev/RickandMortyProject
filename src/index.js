@@ -7,7 +7,6 @@ import { App } from './Components/App/App';
 import ReactQuery from './Helpers/ReactQuery';
 import ContextProvider from './Helpers/UseContext';
 
-import bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
