@@ -30,8 +30,6 @@ const SingleLocation = () => {
     return <ErrorComponent/>;
   }
 
-  console.log(data)
-
   return (
   <>
     <div className='especialDescription-container'>

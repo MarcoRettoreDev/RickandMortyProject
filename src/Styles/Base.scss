@@ -35,14 +35,17 @@ $fontSize-normal: 1.6rem;
 $fontSize-medium: 2.0rem;
 $fontSize-big: 2.4rem;
 
+$footerSize: 8rem;
+
 html
 {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body{
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -51,6 +54,8 @@ body{
   min-height: 100%;
   width: 100%;
   background-color: $black-night;
+  display: flex;
+  flex-direction: column;
 }
 
 a{
@@ -104,6 +109,7 @@ a{
   font-size: $fontSize-small!important;
 }
 
+
 /*    FOOTER     */
 
 .footer__wrapper
@@ -113,8 +119,8 @@ a{
   color: $gray-mid;
   background-color: $white;
 
-  position: fixed;
-  bottom: 0;
+  // position: fixed;
+  // bottom: 0;
 
   & p{
     margin: 0;

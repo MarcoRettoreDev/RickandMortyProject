@@ -20,7 +20,7 @@ const SelectComponent = () => {
           <option value="1">Jump to page</option>
             {[...Array(total).keys()].map((x, index) => {
               return (
-                <option value={x + 1}>
+                <option value={x + 1} key={x + 1}>
                   Page N° {x + 1}
                 </option>
               );

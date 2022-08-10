@@ -3,7 +3,7 @@
 .main__card-wrapper
 {
   width: 100%;
-  max-width: 302px !important;
+  max-width: 300px !important;
   margin: 2rem auto ;
 
   border: 1px solid Base.$black-night;
@@ -20,7 +20,7 @@
   }
 
   @media screen and (min-width: 600px){
-    max-height: 180px;
+    max-height: 240px;
     max-width: 450px !important; //550 original
     display:flex;
     border-radius: 0 10px 10px 0;
@@ -35,14 +35,6 @@
   transform: scale(105%);
 }
 
-.cardDeck article:last-child{
-  margin-bottom: 15rem !important;
-}
-
-.especialCardDeck a:last-child{
-  margin-bottom: 10rem !important;
-}
-
 .card-img-wrapper
 {
   flex: 2 1 0%;
@@ -53,8 +45,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   @media screen and (min-width: 600px){
-    max-height: 300px;
+    max-height: 240px;
     max-width: 60%;
     height: 100%;
     width: 100%;
@@ -90,7 +83,6 @@
   & .status{
     margin-right: .5rem;
   }
-
 }
 
 .card-body-header{

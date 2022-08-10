@@ -40,8 +40,6 @@ const Episodes = () =>{
     return <ErrorComponent/>;
   }
 
-  console.log(data.results)
-
   return (
     <>
       {
