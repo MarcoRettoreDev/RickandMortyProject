@@ -1,12 +1,29 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAnimationControls, motion } from "framer-motion";
 
 const CardLocations = (props) => {
   
-  const { name, type, created, id } = props;
+  const { name, type, created, id, index } = props;
+
+  const controls = useAnimationControls();
+
+  useEffect(() => {
+    controls.set({ opacity: 0 });
+    controls.start(i => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.1 },
+    }));
+  }, [])
   
   return (
     <Link to={`/location/${id}`} className='col-12 offset-lg-1 offset-xl-2 especialCard-container'>
-      <article className="especialCard-wrapper">
+      <motion.article 
+        className="especialCard-wrapper"
+        custom={index}
+        animate={controls}
+      >
         <div className="especialCard-content">
           <div className="especialCard-header">
             <h3>{ name }</h3>
@@ -22,7 +39,7 @@ const CardLocations = (props) => {
             </div>
           </div>
         </div>
-      </article>
+      </motion.article>
     </Link>
   )
 }

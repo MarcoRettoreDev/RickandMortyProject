@@ -45,13 +45,14 @@ const Episodes = () =>{
       {
          data?.results?.length > 0 ? (
           <section className='row my-5 especialCardDeck'>
-            { data.results.map((episode)=>
+            { data.results.map((episode, i)=>
               <CardEpisodes
                 name = {episode.name}
                 created = {episode.created}
                 episode = {episode.episode}
                 key = {episode.id}
                 id = {episode.id}
+                index = {i}
               />
               )
             }

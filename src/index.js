@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
-
+import ContextProvider from './Helpers/UseContext';
+import ReactQuery from './Helpers/ReactQuery';
 import { App } from './Components/App/App';
 
-import ReactQuery from './Helpers/ReactQuery';
-import ContextProvider from './Helpers/UseContext';
-
+import bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <BrowserRouter>
     <ContextProvider>
       <ReactQuery>
@@ -17,5 +18,4 @@ ReactDOM.render(
       </ReactQuery>
     </ContextProvider>
   </BrowserRouter>
-  , document.getElementById('root')
 );

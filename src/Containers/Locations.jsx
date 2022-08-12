@@ -46,13 +46,14 @@ const Locations = () =>{
       {
         data?.results?.length > 0 ? (
           <section className="row my-5 especialCardDeck">
-            { data.results.map((locations)=>
+            { data.results.map((locations, i)=>
                 <CardLocations
                   key = {locations.id}
                   name = {locations.name}
                   type = {locations.type}
                   created = {locations.created}
                   id = {locations.id}
+                  index = {i}
                 />
               ) }
           </section>
