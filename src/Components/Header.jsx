@@ -44,7 +44,7 @@ const Header = () =>{
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to={`${process.env.PUBLIC_URL}`}>
           <img src={logo} alt="Logo rick and morty" className="navbarLogo"/>
         </Link>
         <button ref={divRef} onClick={()=> setOpen(!open)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,22 +56,22 @@ const Header = () =>{
         >
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to='/' className="nav-link" aria-current='page' onClick={resetState}>
+              <Link to={`${process.env.PUBLIC_URL}`} className="nav-link" aria-current='page' onClick={resetState}>
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link to='/characters' className="nav-link" aria-current='page' onClick={resetState}>
+              <Link to={`${process.env.PUBLIC_URL}/characters`} className="nav-link" aria-current='page' onClick={resetState}>
                 Characters
               </Link>
             </li>
             <li className="nav-item">
-              <Link to='/episodes' className="nav-link" aria-current='page' onClick={resetState}>
+              <Link to={`${process.env.PUBLIC_URL}/episodes`} className="nav-link" aria-current='page' onClick={resetState}>
                 Episodes
               </Link>
             </li>
             <li className="nav-item">
-              <Link to='/locations' className="nav-link" aria-current='page' onClick={resetState}>
+              <Link to={`${process.env.PUBLIC_URL}/locations`} className="nav-link" aria-current='page' onClick={resetState}>
                 Locations
               </Link>
             </li>

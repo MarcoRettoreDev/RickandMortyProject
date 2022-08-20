@@ -9,15 +9,15 @@
   min-height: 85vh;
 
   & .title{
-    font-size: var(--big-font-size);
-    font-family: var(--title-font);
+    font-size: Base.$fontSize-big;
+    font-family: Base.$font-title;
     color: Base.$white;
     margin: 3rem 0 1rem;
   }
 
   & .subtitle{
-    font-size: var(--normal-font-size);
-    font-family: var(--body-font);
+    font-size: Base.$fontSize-normal;
+    font-family: Base.$font-body;
     color: Base.$white;
     margin: 1rem 0;
     text-align: center;
@@ -25,8 +25,7 @@
 }
 
 .errorImgWrapper{
-  height: 60vh;
-  width: 80vw;
+  width: 60vw;
   margin: 0 auto 3rem;
   display: flex;
   justify-content: center;

@@ -52,7 +52,7 @@ function NavBar() {
               ></img>
             )}
             <div className="navbarPageWrapper">
-              <span>{state.page}</span>
+              <span className="pageNumber">{state.page}</span>
             </div>
             {state.page < state.totalPages ? (
               <img

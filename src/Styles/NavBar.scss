@@ -16,6 +16,12 @@
   align-items: center;
 }
 
+.pageNumber{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: Base.$black-night;
+}
+
 .button_prev,
 .button_next
 {
@@ -54,54 +60,3 @@
   }
 }
 
-/* Dropup Button */
-.dropbtn {
-  color: Base.$black-night;
-  padding: 4px 8px;
-  background-color: transparent;
-  font-size: Base.$fontSize-normal;
-  font-family: Base.$font-body;
-  border: 3px solid black;
-  border-radius: Base.$button-border-radius;
-}
-
-/* The container <div> - needed to position the dropup content */
-.dropup {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropup content (Hidden by Default) */
-.dropup-content {
-  display: none;
-  position: absolute;
-  bottom: 32px;
-  left: -18px;
-  background-color: Base.$white;
-  min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside */
-.dropup-content a {
-  color: Base.$black-night;
-  padding: 6px 12px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of links */
-.dropup-content a:hover {
-  background-color: Base.$gray-mid;
-}
-
-/* Show the dropup menu on hover */
-.dropup:hover .dropup-content {
-  display: block;
-}
-
-/* Change the background color of the dropup button when the dropup content is shown */
-.dropup:hover .dropbtn {
-  background-color: Base.$color-secondary;
-}

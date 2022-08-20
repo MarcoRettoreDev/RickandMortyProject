@@ -5,17 +5,17 @@ const WelcomePage = () => {
   let welcomePageData = [
     {
       id: 1,
-      link: "locations",
+      link: "/locations",
       text: "Locations"
     },
     {
       id: 2,
-      link: "episodes",
+      link: "/episodes",
       text: "Episodes"
     },
     {
       id: 3,
-      link: "characters",
+      link: "/characters",
       text: "Characters"
     }
   ];
@@ -24,18 +24,18 @@ const WelcomePage = () => {
     <div className="container">
       <div className="row min-vh-100">
         <div className="d-flex flex-column justify-content-around align-items-center">
-        {
-        welcomePageData.map((card) => {
-          return (
-            <WelcomePageCard
-            key={card.id}
-            imgSrc={card.imgSrc}
-            text={card.text}
-            link={card.link}
-            />
-            );
-          })
-        }
+          {
+          welcomePageData.map((card) => {
+            return (
+              <WelcomePageCard
+              key={card.id}
+              imgSrc={card.imgSrc}
+              text={card.text}
+              link={card.link}
+              />
+              );
+            })
+          }
         </div>
       </div>
     </div>

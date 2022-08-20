@@ -7,6 +7,6 @@ const ActionTypes = {
   SET_TOTAL_LOCATIONS: 'setTotalLocations',
   SET_PAGE_INFO: 'setPageInfo',
   SET_CURRENT_CHARACTERS: 'setCurrentCharacters'
-}
+};
 
 export { ActionTypes };

@@ -26,7 +26,6 @@ const Characters = () =>{
       .then(res => res.data )
   )
 
-
   useEffect(() => {
     if(data !== undefined && !isError){
       dispatch({type: ActionTypes.SET_TOTAL_PAGE, payload: data.info.pages})

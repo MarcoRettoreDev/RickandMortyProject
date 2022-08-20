@@ -14,9 +14,9 @@ const Locations = () =>{
   const API = 'https://rickandmortyapi.com/api';
 
   const { state, dispatch } = useContext(myContext);
-
-  const key = state.searchInput?.length >= 3 ? state.searchInput : ''; 
   
+  const key = state.searchInput?.length >= 3 ? state.searchInput : ''; 
+
   const page = state.page;
 
   const URI = state.searchInput?.length >= 3 ? `${API}/location/?name=${state.searchInput}` : `${API}/location/?page=${state.page}`; 

@@ -18,8 +18,7 @@ const CardEpisodes = (props) => {
   }, [])
   
   return (
-    
-    <Link to={`/episode/${id}`} className='col-12 offset-lg-1 offset-xl-2 especialCard-container'>
+    <Link to={`${process.env.PUBLIC_URL}episode/${id}`} className='col-12 offset-lg-1 offset-xl-2 especialCard-container'>
       <motion.article className="especialCard-wrapper"
         animate={controls}
         custom={index}

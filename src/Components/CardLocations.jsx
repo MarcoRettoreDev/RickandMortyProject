@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useAnimationControls, motion } from "framer-motion";
 
 const CardLocations = (props) => {
-  
+
   const { name, type, created, id, index } = props;
 
   const controls = useAnimationControls();
@@ -16,9 +16,9 @@ const CardLocations = (props) => {
       transition: { delay: i * 0.1 },
     }));
   }, [])
-  
+
   return (
-    <Link to={`/location/${id}`} className='col-12 offset-lg-1 offset-xl-2 especialCard-container'>
+    <Link to={`${process.env.PUBLIC_URL}location/${id}`} className='col-12 offset-lg-1 offset-xl-2 especialCard-container'>
       <motion.article 
         className="especialCard-wrapper"
         custom={index}
