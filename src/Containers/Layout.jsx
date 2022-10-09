@@ -13,7 +13,6 @@ const Layout = () =>{
         </main>
 
         <NavBar/>
-
     </>
   )
 }

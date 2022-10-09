@@ -8,7 +8,6 @@ import { ActionTypes } from "../Helpers/ActionTypes";
 import { useEffect } from "react";
 
 function NavBar() {
-  
   const { state, dispatch } = useContext(myContext);
 
   const changePage = (page) => {
@@ -26,7 +25,7 @@ function NavBar() {
       );
     }
   };
-  
+
   useEffect(() => {
     renderJumpPage();
   }, [state.totalPages]);
@@ -73,7 +72,17 @@ function NavBar() {
         </nav>
       </div>
       <footer className="footer__wrapper">
-        <p> Made with ♥ by <a href="https://marcorettoredev.github.io/" rel="noreferer" target="_blank">Mr.Dev</a></p>
+        <p>
+          {" "}
+          Made with ♥ by{" "}
+          <a
+            href="https://marcorettoredev.github.io/"
+            rel="noreferer"
+            target="_blank"
+          >
+            Mr.Dev
+          </a>
+        </p>
       </footer>
     </div>
   );
