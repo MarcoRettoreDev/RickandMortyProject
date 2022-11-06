@@ -1,41 +1,35 @@
 {
- "name": "App",
- "icons": [
-  {
-   "src": "\/android-icon-36x36.png",
-   "sizes": "36x36",
-   "type": "image\/png",
-   "density": "0.75"
-  },
-  {
-   "src": "\/android-icon-48x48.png",
-   "sizes": "48x48",
-   "type": "image\/png",
-   "density": "1.0"
-  },
-  {
-   "src": "\/android-icon-72x72.png",
-   "sizes": "72x72",
-   "type": "image\/png",
-   "density": "1.5"
-  },
-  {
-   "src": "\/android-icon-96x96.png",
-   "sizes": "96x96",
-   "type": "image\/png",
-   "density": "2.0"
-  },
-  {
-   "src": "\/android-icon-144x144.png",
-   "sizes": "144x144",
-   "type": "image\/png",
-   "density": "3.0"
-  },
-  {
-   "src": "\/android-icon-192x192.png",
-   "sizes": "192x192",
-   "type": "image\/png",
-   "density": "4.0"
-  }
- ]
+  "short_name": "Rick and morty",
+  "name": "Rick and morty wikiapp",
+  "background_color": "#000000",
+  "categories": [
+     "entretainment"
+  ],
+  "description": "This is wiki for Rick and Morty serie, you can get information about characters, episodes and dimensions.",
+  "dir": "ltr",
+  "display_override": ["standalone", "fullscreen"],
+  "display": "standalone",
+  "icons":[
+    {
+      "src": "rickandmorty_portal_64x52.png",
+      "sizes": "64x52",
+      "type": "image/png"
+    },
+    {
+      "src": "rickandmorty_portal_320x260.png",
+      "sizes": "320x260",
+      "type": "image/png"
+    },
+    {
+      "src": "rickandmorty_portal_512x416.png",
+      "sizes": "512x416",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en-US",
+  "orientation": "portrait",
+  "prefer_related_applications": false,
+  "scope": "/",
+  "start_url": "/",
+  "theme_color": "#23b107"
 }
