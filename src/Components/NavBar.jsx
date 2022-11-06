@@ -51,10 +51,6 @@ function NavBar() {
                 width="32"
                 height="32"
               />
-              // <img
-
-              //   src={arrowLeft}
-              // ></img>
             )}
             <div className="navbarPageWrapper">
               <span className="pageNumber">{state.page}</span>

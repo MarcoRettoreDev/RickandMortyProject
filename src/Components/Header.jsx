@@ -13,8 +13,6 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [isReadyForInstall, setIsReadyForInstall] = useState(false);
 
-  // const windowWidth = window.innerWidth;
-
   const resetState = () => {
     dispatch({ type: ActionTypes.SET_SEARCH_INPUT, payload: "" });
     dispatch({ type: ActionTypes.SET_PAGE, payload: 1 });
