@@ -25,19 +25,13 @@
 .button_prev,
 .button_next
 {
-  width: 3rem;
-  background-clip: padding-box;
   border-radius: 6px;
 }
 
-.button_prev:hover{
-  cursor: pointer;
-  background-color: Base.$color-secondary;
-}
-
+.button_prev:hover,
 .button_next:hover{
   cursor: pointer;
-  background-color: Base.$color-secondary;
+  color: Base.$color-secondary;
 }
 
 .navbarSelectWrapper{

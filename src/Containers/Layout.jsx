@@ -1,20 +1,18 @@
-import { Header } from '../Components/Header';
-import { NavBar } from '../Components/NavBar';
+import { Header } from "../Components/Header";
+import { NavBar } from "../Components/NavBar";
+import { Outlet } from "react-router-dom";
 
-import { Outlet } from 'react-router-dom';
-
-const Layout = () =>{
-
+const Layout = () => {
   return (
     <>
-        <Header/>
-        <main className='container'>
-          <Outlet/>
-        </main>
+      <Header />
+      <main className="container">
+        <Outlet />
+      </main>
 
-        <NavBar/>
+      <NavBar />
     </>
-  )
-}
+  );
+};
 
 export { Layout };

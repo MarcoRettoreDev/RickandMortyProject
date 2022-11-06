@@ -2,16 +2,18 @@ import { useState, useContext, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { myContext } from "../Helpers/UseContext";
 import { ActionTypes } from "../Helpers/ActionTypes";
+import { Icon } from "@iconify/react";
 
 import logo from "../assets/icons/Logo_660x600.png";
 import { SearchBar } from "../Components/SearchBar";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const { dispatch } = useContext(myContext);
   const [open, setOpen] = useState(false);
+  const [isReadyForInstall, setIsReadyForInstall] = useState(false);
 
-  const windowWidth = window.innerWidth;
+  // const windowWidth = window.innerWidth;
 
   const resetState = () => {
     dispatch({ type: ActionTypes.SET_SEARCH_INPUT, payload: "" });
@@ -39,7 +41,38 @@ const Header = () => {
     if (computed === "none") {
       setOpen(true);
     }
+
+    // Evento que escucha cuando podemos instalar la app
+    window.addEventListener("beforeinstallprompt", (event) => {
+      // Prevent the mini-infobar from appearing on mobile.
+      event.preventDefault();
+      console.log("👍", "beforeinstallprompt", event);
+      // Stash the event so it can be triggered later.
+      window.deferredPrompt = event;
+      // Remove the 'hidden' class from the install button container.
+      setIsReadyForInstall(true);
+    });
   }, []);
+
+  async function downloadApp() {
+    console.log("👍", "butInstall-clicked");
+    const promptEvent = window.deferredPrompt;
+    if (!promptEvent) {
+      // The deferred prompt isn't available.
+      console.log("oops, no prompt event guardado en window");
+      return;
+    }
+    // Show the install prompt.
+    promptEvent.prompt();
+    // Log the result
+    const result = await promptEvent.userChoice;
+    console.log("👍", "userChoice", result);
+    // Reset the deferred prompt variable, since
+    // prompt() can only be called once.
+    window.deferredPrompt = null;
+    // Hide the install button.
+    setIsReadyForInstall(false);
+  }
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -68,49 +101,70 @@ const Header = () => {
         >
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "nav-link linkActive" : "nav-link"
+                }
                 to={`${process.env.PUBLIC_URL}`}
-                className="nav-link"
                 aria-current="page"
                 onClick={resetState}
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 to={`/characters`}
-                className="nav-link"
+                className={({ isActive }) =>
+                  isActive ? "nav-link linkActive" : "nav-link"
+                }
                 aria-current="page"
                 onClick={resetState}
               >
                 Characters
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 to={`/episodes`}
-                className="nav-link"
+                className={({ isActive }) =>
+                  isActive ? "nav-link linkActive" : "nav-link"
+                }
                 aria-current="page"
                 onClick={resetState}
               >
                 Episodes
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 to={`/locations`}
-                className="nav-link"
+                className={({ isActive }) =>
+                  isActive ? "nav-link linkActive" : "nav-link"
+                }
                 aria-current="page"
                 onClick={resetState}
               >
                 Locations
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <div className="d-flex ms-auto" role="search">
             <SearchBar />
           </div>
+          {isReadyForInstall && (
+            <div>
+              <Link
+                to={`/`}
+                className="nav-link ms-5"
+                aria-current="page"
+                onClick={() => downloadApp()}
+              >
+                <Icon icon="material-symbols:download" width="32" height="32" />
+                Download
+              </Link>
+            </div>
+          )}
         </motion.div>
       </div>
     </nav>

@@ -109,18 +109,18 @@ a{
   font-size: $fontSize-small!important;
 }
 
+.linkActive{
+  color: $color-secondary !important;
+  font-weight: bold !important;
+}
+
 
 /*    FOOTER     */
-
 .footer__wrapper
 {
-
   font-size: $fontSize-small;
   color: $gray-mid;
   background-color: $white;
-
-  // position: fixed;
-  // bottom: 0;
 
   & p{
     margin: 0;

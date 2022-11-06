@@ -1,11 +1,9 @@
 import { useContext } from "react";
 
-import arrowLeft from "../assets/svg/arrow-left-r.svg";
-import arrowRight from "../assets/svg/arrow-right-r.svg";
-
 import { myContext } from "../Helpers/UseContext";
 import { ActionTypes } from "../Helpers/ActionTypes";
 import { useEffect } from "react";
+import { Icon } from "@iconify/react";
 
 function NavBar() {
   const { state, dispatch } = useContext(myContext);
@@ -36,37 +34,50 @@ function NavBar() {
         <nav className="d-flex">
           <div className="navbarButtonWrapper">
             {state.page !== 1 ? (
-              <img
+              <Icon
                 className="button_prev"
                 onClick={() => changePage(state.page - 1)}
-                src={arrowLeft}
-              ></img>
+                icon="jam:arrow-square-left"
+                width="32"
+                height="32"
+              />
             ) : (
-              <img
+              <Icon
                 style={{ opacity: 0 }}
                 onClick={() => {
                   if (state.page !== 1) changePage(state.page - 1);
                 }}
-                src={arrowLeft}
-              ></img>
+                icon="jam:arrow-square-left"
+                width="32"
+                height="32"
+              />
+              // <img
+
+              //   src={arrowLeft}
+              // ></img>
             )}
             <div className="navbarPageWrapper">
               <span className="pageNumber">{state.page}</span>
             </div>
             {state.page < state.totalPages ? (
-              <img
-                className="button_next"
+              <Icon
                 onClick={() => changePage(state.page + 1)}
-                src={arrowRight}
-              ></img>
+                className="button_next"
+                icon="jam:arrow-square-right"
+                width="32"
+                height="32"
+              />
             ) : (
-              <img
-                style={{ opacity: 0 }}
+              <Icon
                 onClick={() => {
                   if (state.page < state.totalPages) changePage(state.page + 1);
                 }}
-                src={arrowRight}
-              ></img>
+                style={{ opacity: 0 }}
+                className="button_next"
+                icon="jam:arrow-square-right"
+                width="32"
+                height="32"
+              />
             )}
           </div>
         </nav>
