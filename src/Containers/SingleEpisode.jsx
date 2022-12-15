@@ -10,11 +10,9 @@ import { Icon } from "@iconify/react";
 const SingleEpisode = () => {
   const navigate = useNavigate();
 
-  const API = "https://rickandmortyapi.com/api";
-
   const { episodeID } = useParams();
 
-  const URIEPISODE = `${API}/episode/${episodeID}`;
+  const URIEPISODE = `${process.env.REACT_APP_API_KEY}/episode/${episodeID}`;
 
   const { isLoading, isError, data } = useQuery([`episode/${episodeID}`], () =>
     axios.get(URIEPISODE).then((res) => res.data)

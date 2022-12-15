@@ -1,20 +1,21 @@
 import { WelcomePageCard } from "../Components/WelcomePageCard";
+import { ROUTES } from "../Helpers/routesIndex";
 
 const WelcomePage = () => {
   let welcomePageData = [
     {
       id: 1,
-      link: "/locations",
+      link: ROUTES.locations,
       text: "Locations",
     },
     {
       id: 2,
-      link: "/episodes",
+      link: ROUTES.episodes,
       text: "Episodes",
     },
     {
       id: 3,
-      link: "/characters",
+      link: ROUTES.characters,
       text: "Characters",
     },
   ];

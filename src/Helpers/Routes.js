@@ -7,18 +7,18 @@ import { Locations } from "../Containers/Locations";
 import { SingleEpisode } from "../Containers/SingleEpisode";
 import { SingleLocation } from "../Containers/SingleLocation";
 import { ErrorComponent } from "../Components/ErrorComponent";
-
+import { ROUTES } from "./routesIndex";
 export const Router = () => {
   return (
     <Routes>
-      <Route default path={process.env.PUBLIC_URL} element={<WelcomePage />} />
+      <Route exact path={ROUTES.home} element={<WelcomePage />} />
 
       <Route element={<Layout />}>
-        <Route path={`/characters`} element={<Characters />} />
-        <Route path={`/episodes`} element={<Episodes />} />
-        <Route path={`/episode/:episodeID`} element={<SingleEpisode />} />
-        <Route path={`/locations`} element={<Locations />} />
-        <Route path={`/location/:locationID`} element={<SingleLocation />} />
+        <Route path={ROUTES.characters} element={<Characters />} />
+        <Route path={ROUTES.episodes} element={<Episodes />} />
+        <Route path={ROUTES.episode} element={<SingleEpisode />} />
+        <Route path={ROUTES.locations} element={<Locations />} />
+        <Route path={ROUTES.location} element={<SingleLocation />} />
         <Route path={`*`} element={<ErrorComponent />} />
       </Route>
     </Routes>

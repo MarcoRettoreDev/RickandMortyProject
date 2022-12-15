@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { generatePath, Link } from "react-router-dom";
 import { useAnimationControls, motion } from "framer-motion";
+import { ROUTES } from "../Helpers/routesIndex";
 
 const CardLocations = (props) => {
   const { name, type, created, id, index } = props;
@@ -18,7 +19,9 @@ const CardLocations = (props) => {
 
   return (
     <Link
-      to={`/location/${id}`}
+      to={generatePath(ROUTES.location, {
+        locationID: id,
+      })}
       className="col-12 offset-lg-1 offset-xl-2 especialCard-container"
     >
       <motion.article

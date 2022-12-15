@@ -10,11 +10,9 @@ import { Icon } from "@iconify/react";
 const SingleLocation = () => {
   const navigate = useNavigate();
 
-  const API = "https://rickandmortyapi.com/api";
-
   const { locationID } = useParams();
 
-  const URIEPISODE = `${API}/location/${locationID}`;
+  const URIEPISODE = `${process.env.REACT_APP_API_KEY}/location/${locationID}`;
 
   const { isLoading, isError, data } = useQuery(
     [`location/${locationID}`],

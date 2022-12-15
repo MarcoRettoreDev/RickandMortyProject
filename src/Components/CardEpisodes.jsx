@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { generatePath, Link } from "react-router-dom";
 import { motion, useAnimationControls } from "framer-motion";
 import { useEffect } from "react";
+import { ROUTES } from "../Helpers/routesIndex";
 
 const CardEpisodes = (props) => {
   const { name, episode, created, id, index } = props;
@@ -17,7 +18,9 @@ const CardEpisodes = (props) => {
 
   return (
     <Link
-      to={`/episode/${id}`}
+      to={generatePath(ROUTES.episode, {
+        episodeID: id,
+      })}
       className="col-12 offset-lg-1 offset-xl-2 especialCard-container"
     >
       <motion.article

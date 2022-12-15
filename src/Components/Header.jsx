@@ -7,6 +7,7 @@ import { Icon } from "@iconify/react";
 import logo from "../assets/icons/Logo_660x600.png";
 import { SearchBar } from "../Components/SearchBar";
 import { Link, NavLink } from "react-router-dom";
+import { ROUTES } from "../Helpers/routesIndex";
 
 const Header = () => {
   const { dispatch } = useContext(myContext);
@@ -75,7 +76,7 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
-        <Link className="navbar-brand" to={`${process.env.PUBLIC_URL}`}>
+        <Link className="navbar-brand" to={ROUTES.home}>
           <img src={logo} alt="Logo rick and morty" className="navbarLogo" />
         </Link>
         <button
@@ -100,10 +101,8 @@ const Header = () => {
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink
-                className={({ isActive }) =>
-                  isActive ? "nav-link linkActive" : "nav-link"
-                }
-                to={`${process.env.PUBLIC_URL}`}
+                className={"nav-link"}
+                to={ROUTES.home}
                 aria-current="page"
                 onClick={resetState}
               >
@@ -112,7 +111,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to={`/characters`}
+                to={ROUTES.characters}
                 className={({ isActive }) =>
                   isActive ? "nav-link linkActive" : "nav-link"
                 }
@@ -124,7 +123,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to={`/episodes`}
+                to={ROUTES.episodes}
                 className={({ isActive }) =>
                   isActive ? "nav-link linkActive" : "nav-link"
                 }
@@ -136,7 +135,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to={`/locations`}
+                to={ROUTES.locations}
                 className={({ isActive }) =>
                   isActive ? "nav-link linkActive" : "nav-link"
                 }
