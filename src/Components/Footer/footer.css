@@ -1,0 +1,23 @@
+
+.footer__wrapper
+{
+  width: 100%;
+  display:grid;
+  place-items: center;
+
+  font-size: var(--normal-font-size);
+  color: #fafafa;
+}
+
+.footer__wrapper a
+{    
+  color: #fafafa;
+}
+
+@media screen and (min-width: 600px)
+{
+  .footer__wrapper
+  {
+   width: 30%;
+  }
+}

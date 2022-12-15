@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+:root
+{
+  --title-font : 'Finger Paint', cursive;
+  --body-font: 'Roboto Mono', Arial, Helvetica, sans-serif;
+  
+  --small-font-size: 1.2rem;
+  --normal-font-size: 1.6rem;
+  --medium-font-size: 2.0rem;
+  --big-font-size: 2.4rem;
+
+  --normal-line-height: 1.6rem;
+  --big-line-height: 2.2rem;
+
+  --red: rgb(204, 20, 20);
+  --green: rgb(10, 175, 38);
+  --green-soft: rgb(10, 134, 83);
+  --cyan: rgb(19, 130, 134);
+  --white: #fff;
+  --grey: rgb(207, 206, 206);
+  --black: #000;
+  --black-soft: rgba(0, 0, 0, 0.931);
+
+}
+
+html
+{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body{
+  height: 100vh;
+  width: 100%;
+  background-color: var(--black-soft);
+}
+
+#root
+{
+  min-height: 100%;
+  width: 100%;
+}

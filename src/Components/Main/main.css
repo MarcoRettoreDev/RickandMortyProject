@@ -1,0 +1,31 @@
+
+.main__wrapper
+{
+  height: 100%;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display:grid;
+  grid-template-columns: 1fr;
+  font-size: var(--normal-font-size);
+}
+
+@media screen and (min-width: 600px)
+{
+  .main__wrapper
+  {
+    margin: 3rem auto;
+  }
+} 
+
+@media screen and (min-width: 1024px)
+{
+  .main__wrapper
+  {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+} 
+
+
