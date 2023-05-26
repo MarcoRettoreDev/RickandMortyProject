@@ -30,6 +30,6 @@
   "orientation": "portrait",
   "prefer_related_applications": false,
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/rickandmorty",
   "theme_color": "#23b107"
 }
