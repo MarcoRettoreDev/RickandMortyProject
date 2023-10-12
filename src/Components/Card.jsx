@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import { ErrorComponent } from "./ErrorComponent";
+import { LoadingComponent } from "./LoadingComponent";
 
 const Card = (props) => {
   const { name, img, status, specie, episode, created, location } = props;
@@ -12,15 +14,16 @@ const Card = (props) => {
           .get(`https://rickandmortyapi.com/api/location/${episode}`)
           .then((res) => res.data);
       }
-    }
+    },
+    { retry: 1, refetchOnWindowFocus: false }
   );
 
   if (isLoading) {
-    return <h4>Loading location...</h4>;
+    return <LoadingComponent />;
   }
 
   if (isError) {
-    return <h4>Cant find this location</h4>;
+    return <ErrorComponent />;
   }
 
   return (
@@ -29,7 +32,7 @@ const Card = (props) => {
         <img src={img} alt={name}></img>
       </div>
       <div className="card-text-wrapper">
-        <div className="card-body-header">
+        <div className="card-body-header ">
           <h2>{name}</h2>
         </div>
         <div className="card-body">

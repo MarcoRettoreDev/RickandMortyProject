@@ -102,6 +102,7 @@
   display:flex;
   justify-content: flex-start;
   align-items: baseline;
+  overflow-wrap: break-word;
   & > h2{
     font-size: Base.$fontSize-big;
     font-family: Base.$font-title;

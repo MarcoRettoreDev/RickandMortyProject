@@ -16,7 +16,11 @@ const SingleLocation = () => {
 
   const { isLoading, isError, data } = useQuery(
     [`location/${locationID}`],
-    () => axios.get(URIEPISODE).then((res) => res.data)
+    () => axios.get(URIEPISODE).then((res) => res.data),
+    {
+      retry: 1,
+      refetchOnWindowFocus: false,
+    }
   );
 
   if (isLoading) {

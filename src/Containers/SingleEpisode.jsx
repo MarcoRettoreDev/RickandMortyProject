@@ -14,8 +14,13 @@ const SingleEpisode = () => {
 
   const URIEPISODE = `${process.env.REACT_APP_API_KEY}/episode/${episodeID}`;
 
-  const { isLoading, isError, data } = useQuery([`episode/${episodeID}`], () =>
-    axios.get(URIEPISODE).then((res) => res.data)
+  const { isLoading, isError, data } = useQuery(
+    [`episode/${episodeID}`],
+    () => axios.get(URIEPISODE).then((res) => res.data),
+    {
+      retry: 1,
+      refetchOnWindowFocus: false,
+    }
   );
 
   if (isLoading) {

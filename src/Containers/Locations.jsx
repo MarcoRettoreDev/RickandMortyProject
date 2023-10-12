@@ -23,7 +23,8 @@ const Locations = () => {
 
   const { isLoading, isError, data } = useQuery(
     ["locationsList", key, page],
-    () => axios.get(URI).then((res) => res.data)
+    () => axios.get(URI).then((res) => res.data),
+    { retry: 1, refetchOnWindowFocus: false }
   );
 
   useEffect(() => {
@@ -35,6 +36,8 @@ const Locations = () => {
       });
     }
   }, [isLoading]);
+
+  console.log(isLoading, isError);
 
   if (isLoading) {
     return <LoadingComponent />;
