@@ -31,5 +31,5 @@
   "prefer_related_applications": false,
   "scope": "/",
   "start_url": "/rickandmorty",
-  "theme_color": "#23b107"
+  "theme_color": "#000000"
 }
