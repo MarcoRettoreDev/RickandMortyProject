@@ -1,8 +1,5 @@
 services:
   app:
-    build:
-      context: .
-      dockerfile: ./docker/dockerfile
-      target: prod
+    image: rickandmorty:1.0.0
     ports:
       - "8282:80"
