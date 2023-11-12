@@ -3,6 +3,6 @@ services:
     build:
       context: .
       dockerfile: ./docker/dockerfile
-      target: build
+      target: prod
     ports:
       - "8282:80"
