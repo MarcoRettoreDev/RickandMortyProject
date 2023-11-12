@@ -1,0 +1,8 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/dockerfile
+      target: build
+    ports:
+      - "8282:80"

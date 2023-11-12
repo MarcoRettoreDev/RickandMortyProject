@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/dockerfile
+      target: dev
+    volumes:
+      - .:/app
+    ports:
+      - "8282:3000"
