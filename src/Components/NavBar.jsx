@@ -80,14 +80,13 @@ function NavBar() {
       </div>
       <footer className="footer__wrapper">
         <p>
-          {" "}
-          Made with ♥ by{" "}
+          Made with ♥ by&nbsp;
           <a
-            href="https://marcorettoredev.github.io/"
-            rel="noreferer"
-            target="_blank"
+            className="text-decoration-underline"
+            href="https://rettore.dev/"
+            target="_blank noopener noreferer"
           >
-            Mr.Dev
+            Rettore Dev
           </a>
         </p>
       </footer>

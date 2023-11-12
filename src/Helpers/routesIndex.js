@@ -1,8 +1,8 @@
 export const ROUTES = {
-  home: "/rickandmorty",
-  characters: `/rickandmorty/characters`,
-  episodes: `/rickandmorty/episodes`,
-  episode: `/rickandmorty/episode/:episodeID`,
-  locations: `/rickandmorty/locations`,
-  location: `/rickandmorty/location/:locationID`,
+  home: "/",
+  characters: `/characters`,
+  episodes: `/episodes`,
+  episode: `/episode/:episodeID`,
+  locations: `/locations`,
+  location: `/location/:locationID`,
 };
